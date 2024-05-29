@@ -1,8 +1,7 @@
-<p><a target="_blank" href="https://app.eraser.io/workspace/SUukoDZZGbo0NF0fxbT4" id="edit-in-eraser-github-link"><img alt="Edit in Eraser" src="https://firebasestorage.googleapis.com/v0/b/second-petal-295822.appspot.com/o/images%2Fgithub%2FOpen%20in%20Eraser.svg?alt=media&amp;token=968381c8-a7e7-472a-8ed6-4a6626da5501"></a></p>
-
 ### Next App
 
 ```sh
+
 npx create-next-app@latest home-away
 ```
 
@@ -17,9 +16,9 @@ npm run dev
 
 ```tsx
 function HomePage() {
-  return <h1 className='text-3xl'>HomePage</h1>
+  return <h1 className='text-3xl'>HomePage</h1>;
 }
-export default HomePage
+export default HomePage;
 ```
 
 - layout.tsx
@@ -28,7 +27,7 @@ export default HomePage
 export const metadata: Metadata = {
   title: 'HomeAway',
   description: 'Feel at home, away from home.',
-}
+};
 ```
 
 - get a hold of the README.MD
@@ -42,23 +41,25 @@ export const metadata: Metadata = {
 - properties
 - rentals
 - reviews
+
 - new file - pageName/page.tsx
 
 ```tsx
 function BookingsPage() {
-  return <h1 className='text-3xl'>BookingsPage</h1>
+  return <h1 className='text-3xl'>BookingsPage</h1>;
 }
-export default BookingsPage
+export default BookingsPage;
 ```
 
 ### Shadcn/ui
 
-[﻿Docs](https://ui.shadcn.com/)
+[Docs](https://ui.shadcn.com/)
 
-[﻿Next Install](https://ui.shadcn.com/docs/installation/next)
+[Next Install](https://ui.shadcn.com/docs/installation/next)
 
 ```sh
 npx shadcn-ui@latest init
+
 ```
 
 - New York
@@ -69,7 +70,7 @@ npx shadcn-ui@latest add button
 ```
 
 ```tsx
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 
 function HomePage() {
   return (
@@ -79,9 +80,9 @@ function HomePage() {
         Click me
       </Button>
     </div>
-  )
+  );
 }
-export default HomePage
+export default HomePage;
 ```
 
 ```sh
@@ -99,6 +100,7 @@ npx shadcn-ui@latest add breadcrumb calendar card checkbox dropdown-menu input l
 ### Navbar - Setup
 
 - create
+
 - navbar
   - DarkMode.tsx
   - LinksDropdown.tsx
@@ -123,9 +125,9 @@ globals.css
 ### Navbar - Structure
 
 ```tsx
-import NavSearch from './NavSearch'
-import LinksDropdown from './LinksDropdown'
-import DarkMode from './DarkMode'
+import NavSearch from './NavSearch';
+import LinksDropdown from './LinksDropdown';
+import DarkMode from './DarkMode';
 function Navbar() {
   return (
     <nav className='border-b'>
@@ -138,13 +140,13 @@ function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
-export default Navbar
+export default Navbar;
 ```
 
 ```tsx
-import Navbar from '@/components/navbar/Navbar'
+import Navbar from '@/components/navbar/Navbar';
 
 return (
   <html lang='en' suppressHydrationWarning>
@@ -153,7 +155,7 @@ return (
       <main className='container py-10'>{children}</main>
     </body>
   </html>
-)
+);
 ```
 
 ### Logo
@@ -162,12 +164,12 @@ return (
 npm install react-icons
 ```
 
-[﻿Lucide Icons](https://react-icons.github.io/react-icons/)
+[Lucide Icons](https://react-icons.github.io/react-icons/)
 
 ```tsx
-import Link from 'next/link'
-import { LuTent } from 'react-icons/lu'
-import { Button } from '../ui/button'
+import Link from 'next/link';
+import { LuTent } from 'react-icons/lu';
+import { Button } from '../ui/button';
 
 function Logo() {
   return (
@@ -176,14 +178,14 @@ function Logo() {
         <LuTent className='w-6 h-6' />
       </Link>
     </Button>
-  )
+  );
 }
 ```
 
 ### NavSearch
 
 ```tsx
-import { Input } from '../ui/input'
+import { Input } from '../ui/input';
 
 function NavSearch() {
   return (
@@ -192,15 +194,15 @@ function NavSearch() {
       placeholder='find a property...'
       className='max-w-xs dark:bg-muted '
     />
-  )
+  );
 }
-export default NavSearch
+export default NavSearch;
 ```
 
 ### Theme
 
-[﻿Theming Options](https://ui.shadcn.com/docs/theming)
-[﻿Themes](https://ui.shadcn.com/themes)
+[Theming Options](https://ui.shadcn.com/docs/theming)
+[Themes](https://ui.shadcn.com/themes)
 
 - replace css variables in in globals.css
 
@@ -209,18 +211,18 @@ export default NavSearch
 - create app/providers.tsx
 
 ```tsx
-'use client'
+'use client';
 
 function Providers({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return <>{children}</>;
 }
-export default Providers
+export default Providers;
 ```
 
 layout.tsx
 
 ```tsx
-import Providers from './providers'
+import Providers from './providers';
 
 return (
   <html lang='en' suppressHydrationWarning>
@@ -231,12 +233,12 @@ return (
       </Providers>
     </body>
   </html>
-)
+);
 ```
 
 ### DarkMode
 
-[﻿Next.js Dark Mode](https://ui.shadcn.com/docs/dark-mode/next)
+[Next.js Dark Mode](https://ui.shadcn.com/docs/dark-mode/next)
 
 ```sh
 npm install next-themes
@@ -245,22 +247,22 @@ npm install next-themes
 - create app/theme-provider.tsx
 
 ```tsx
-'use client'
+'use client';
 
-import * as React from 'react'
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { type ThemeProviderProps } from 'next-themes/dist/types'
+import * as React from 'react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { type ThemeProviderProps } from 'next-themes/dist/types';
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
 ```
 
 providers.tsx
 
 ```tsx
-'use client'
-import { ThemeProvider } from './theme-provider'
+'use client';
+import { ThemeProvider } from './theme-provider';
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -272,9 +274,9 @@ function Providers({ children }: { children: React.ReactNode }) {
     >
       {children}
     </ThemeProvider>
-  )
+  );
 }
-export default Providers
+export default Providers;
 ```
 
 ### DarkMode
@@ -282,22 +284,22 @@ export default Providers
 - make sure you export as default !!!
 
 ```tsx
-'use client'
+'use client';
 
-import * as React from 'react'
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { useTheme } from 'next-themes'
+import * as React from 'react';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { useTheme } from 'next-themes';
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 
 export default function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -320,19 +322,19 @@ export default function ModeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
 ```
 
 ### UserIcon
 
 ```tsx
-import { LuUser2 } from 'react-icons/lu'
+import { LuUser2 } from 'react-icons/lu';
 
 function UserIcon() {
-  return <LuUser2 className='w-6 h-6 bg-primary rounded-full text-white' />
+  return <LuUser2 className='w-6 h-6 bg-primary rounded-full text-white' />;
 }
-export default UserIcon
+export default UserIcon;
 ```
 
 ### Links Data
@@ -341,9 +343,9 @@ export default UserIcon
 
 ```ts
 type NavLink = {
-  href: string
-  label: string
-}
+  href: string;
+  label: string;
+};
 
 export const links: NavLink[] = [
   { href: '/', label: 'home' },
@@ -353,7 +355,7 @@ export const links: NavLink[] = [
   { href: '/rentals/create ', label: 'create rental' },
   { href: '/rentals', label: 'my rentals' },
   { href: '/profile ', label: 'profile' },
-]
+];
 ```
 
 ### LinksDropdown
@@ -365,13 +367,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu'
-import { LuAlignLeft } from 'react-icons/lu'
-import Link from 'next/link'
-import { Button } from '../ui/button'
-import UserIcon from './UserIcon'
-import { links } from '@/utils/links'
-import SignOutLink from './SignOutLink'
+} from '@/components/ui/dropdown-menu';
+import { LuAlignLeft } from 'react-icons/lu';
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import UserIcon from './UserIcon';
+import { links } from '@/utils/links';
+import SignOutLink from './SignOutLink';
 
 function LinksDropdown() {
   return (
@@ -390,19 +392,19 @@ function LinksDropdown() {
                 {link.label}
               </Link>
             </DropdownMenuItem>
-          )
+          );
         })}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
-export default LinksDropdown
+export default LinksDropdown;
 ```
 
 ### Clerk
 
-[﻿Clerk Docs](https://clerk.com/)
-[﻿Clerk + Next.js Setup](https://clerk.com/docs/quickstarts/nextjs)
+[Clerk Docs](https://clerk.com/)
+[Clerk + Next.js Setup](https://clerk.com/docs/quickstarts/nextjs)
 
 - create new application
 
@@ -426,7 +428,7 @@ On the other hand, CLERK_SECRET_KEY is a server-side environment variable. It's 
 layout.tsx
 
 ```tsx
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs';
 
 return (
   <ClerkProvider>
@@ -439,13 +441,13 @@ return (
       </body>
     </html>
   </ClerkProvider>
-)
+);
 ```
 
 - create middleware.ts
 
 ```ts
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
 const isProtectedRoute = createRouteMatcher([
   '/bookings(.*)',
@@ -454,15 +456,15 @@ const isProtectedRoute = createRouteMatcher([
   '/profile(.*)',
   '/rentals(.*)',
   '/reviews(.*)',
-])
+]);
 
 export default clerkMiddleware((auth, req) => {
-  if (isProtectedRoute(req)) auth().protect()
-})
+  if (isProtectedRoute(req)) auth().protect();
+});
 
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
-}
+};
 ```
 
 - restart dev server
@@ -474,14 +476,14 @@ export const config = {
 
 ### Toast Component
 
-[﻿Toast](https://ui.shadcn.com/docs/components/toast)
+[Toast](https://ui.shadcn.com/docs/components/toast)
 
 providers.tsx
 
 ```tsx
-'use client'
-import { ThemeProvider } from './theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+'use client';
+import { ThemeProvider } from './theme-provider';
+import { Toaster } from '@/components/ui/toaster';
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -496,9 +498,9 @@ function Providers({ children }: { children: React.ReactNode }) {
         {children}
       </ThemeProvider>
     </>
-  )
+  );
 }
-export default Providers
+export default Providers;
 ```
 
 ### SignOutLink
@@ -506,25 +508,25 @@ export default Providers
 - redirectUrl
 
 ```tsx
-'use client'
+'use client';
 
-import { SignOutButton } from '@clerk/nextjs'
-import { useToast } from '../ui/use-toast'
+import { SignOutButton } from '@clerk/nextjs';
+import { useToast } from '../ui/use-toast';
 
 function SignOutLink() {
-  const { toast } = useToast()
+  const { toast } = useToast();
   const handleLogout = () => {
-    toast({ description: 'You have been signed out.' })
-  }
+    toast({ description: 'You have been signed out.' });
+  };
   return (
     <SignOutButton redirectUrl='/'>
       <button className='w-full text-left' onClick={handleLogout}>
         Logout
       </button>
     </SignOutButton>
-  )
+  );
 }
-export default SignOutLink
+export default SignOutLink;
 ```
 
 ### LinksDropdown - Complete
@@ -535,7 +537,7 @@ return (
     <SignedOut>...</SignedOut>
     <SignedIn>....</SignedIn>
   </DropdownMenuContent>
-)
+);
 ```
 
 ```tsx
@@ -562,7 +564,7 @@ return (
               {link.label}
             </Link>
           </DropdownMenuItem>
-        )
+        );
       })}
       <DropdownMenuSeparator />
       <DropdownMenuItem>
@@ -570,7 +572,7 @@ return (
       </DropdownMenuItem>
     </SignedIn>
   </DropdownMenuContent>
-)
+);
 ```
 
 ### Direct User
@@ -588,14 +590,14 @@ NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/profile/create
   - create
 
 ```tsx
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 const createProfileAction = async (formData: FormData) => {
-  'use server'
-  const firstName = formData.get('firstName') as string
-  console.log(firstName)
-}
+  'use server';
+  const firstName = formData.get('firstName') as string;
+  console.log(firstName);
+};
 
 function CreateProfile() {
   return (
@@ -613,9 +615,9 @@ function CreateProfile() {
         </form>
       </div>
     </section>
-  )
+  );
 }
-export default CreateProfile
+export default CreateProfile;
 ```
 
 ### FormInput
@@ -623,16 +625,16 @@ export default CreateProfile
 - components/form/FormInput.tsx
 
 ```tsx
-import { Label } from '../ui/label'
-import { Input } from '../ui/input'
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
 
 type FormInputProps = {
-  name: string
-  type: string
-  label?: string
-  defaultValue?: string
-  placeholder?: string
-}
+  name: string;
+  type: string;
+  label?: string;
+  defaultValue?: string;
+  placeholder?: string;
+};
 
 function FormInput({
   label,
@@ -655,10 +657,10 @@ function FormInput({
         required
       />
     </div>
-  )
+  );
 }
 
-export default FormInput
+export default FormInput;
 ```
 
 ### Default Submit Button
@@ -666,21 +668,21 @@ export default FormInput
 - components/form/Buttons.tsx
 
 ```tsx
-'use client'
-import { ReloadIcon } from '@radix-ui/react-icons'
-import { useFormStatus } from 'react-dom'
-import { Button } from '@/components/ui/button'
+'use client';
+import { ReloadIcon } from '@radix-ui/react-icons';
+import { useFormStatus } from 'react-dom';
+import { Button } from '@/components/ui/button';
 
 type SubmitButtonProps = {
-  className?: string
-  text?: string
-}
+  className?: string;
+  text?: string;
+};
 
 export function SubmitButton({
   className = '',
   text = 'submit',
 }: SubmitButtonProps) {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <Button
       type='submit'
@@ -697,7 +699,7 @@ export function SubmitButton({
         text
       )}
     </Button>
-  )
+  );
 }
 ```
 
@@ -706,34 +708,34 @@ export function SubmitButton({
 - create components/form/FormContainer.tsx
 
 ```tsx
-'use client'
+'use client';
 
-import { useFormState } from 'react-dom'
-import { useEffect } from 'react'
-import { useToast } from '@/components/ui/use-toast'
-import { actionFunction } from '@/utils/types'
+import { useFormState } from 'react-dom';
+import { useEffect } from 'react';
+import { useToast } from '@/components/ui/use-toast';
+import { actionFunction } from '@/utils/types';
 
 const initialState = {
   message: '',
-}
+};
 
 function FormContainer({
   action,
   children,
 }: {
-  action: actionFunction
-  children: React.ReactNode
+  action: actionFunction;
+  children: React.ReactNode;
 }) {
-  const [state, formAction] = useFormState(action, initialState)
-  const { toast } = useToast()
+  const [state, formAction] = useFormState(action, initialState);
+  const { toast } = useToast();
   useEffect(() => {
     if (state.message) {
-      toast({ description: state.message })
+      toast({ description: state.message });
     }
-  }, [state])
-  return <form action={formAction}>{children}</form>
+  }, [state]);
+  return <form action={formAction}>{children}</form>;
 }
-export default FormContainer
+export default FormContainer;
 ```
 
 - create utils/types.ts
@@ -742,22 +744,22 @@ export default FormContainer
 export type actionFunction = (
   prevState: any,
   formData: FormData
-) => Promise<{ message: string }>
+) => Promise<{ message: string }>;
 ```
 
 ### Create Profile - Refactor
 
 ```tsx
-import FormInput from '@/components/form/FormInput'
-import { SubmitButton } from '@/components/form/Buttons'
-import FormContainer from '@/components/form/FormContainer'
+import FormInput from '@/components/form/FormInput';
+import { SubmitButton } from '@/components/form/Buttons';
+import FormContainer from '@/components/form/FormContainer';
 
 const createProfileAction = async (prevState: any, formData: FormData) => {
-  'use server'
-  const firstName = formData.get('firstName') as string
-  if (firstName !== 'shakeAndBake') return { message: 'there was an error...' }
-  return { message: 'Profile Created' }
-}
+  'use server';
+  const firstName = formData.get('firstName') as string;
+  if (firstName !== 'shakeAndBake') return { message: 'there was an error...' };
+  return { message: 'Profile Created' };
+};
 
 function CreateProfile() {
   return (
@@ -774,9 +776,9 @@ function CreateProfile() {
         </FormContainer>
       </div>
     </section>
-  )
+  );
 }
-export default CreateProfile
+export default CreateProfile;
 ```
 
 ### Zod
@@ -790,39 +792,39 @@ npm install zod
 - create utils/schemas.ts
 
 ```ts
-import * as z from 'zod'
-import { ZodSchema } from 'zod'
+import * as z from 'zod';
+import { ZodSchema } from 'zod';
 
 export const profileSchema = z.object({
   // firstName: z.string().max(5, { message: 'max length is 5' }),
   firstName: z.string(),
   lastName: z.string(),
   username: z.string(),
-})
+});
 ```
 
 - create utils/actions.ts
 - import in profile/create page.tsx
 
 ```ts
-'use server'
+'use server';
 
-import { profileSchema } from './schemas'
+import { profileSchema } from './schemas';
 
 export const createProfileAction = async (
   prevState: any,
   formData: FormData
 ) => {
   try {
-    const rawData = Object.fromEntries(formData)
-    const validatedFields = profileSchema.parse(rawData)
-    console.log(validatedFields)
-    return { message: 'Profile Created' }
+    const rawData = Object.fromEntries(formData);
+    const validatedFields = profileSchema.parse(rawData);
+    console.log(validatedFields);
+    return { message: 'Profile Created' };
   } catch (error) {
-    console.log(error)
-    return { message: 'there was an error...' }
+    console.log(error);
+    return { message: 'there was an error...' };
   }
-}
+};
 ```
 
 ### Supabase
@@ -836,7 +838,8 @@ export const createProfileAction = async (
 ### Prisma
 
 - install prisma vs-code extension
-  Prisma ORM is a database toolkit that simplifies database access in web applications. It allows developers to interact with databases using a type-safe and auto-generated API, making database operations easier and more secure.
+
+Prisma ORM is a database toolkit that simplifies database access in web applications. It allows developers to interact with databases using a type-safe and auto-generated API, making database operations easier and more secure.
 
 - Prisma server: A standalone infrastructure component sitting on top of your database.
 - Prisma client: An auto-generated library that connects to the Prisma server and lets you read, write and stream data in your database. It is used for data access in your applications.
@@ -854,33 +857,33 @@ npx prisma init
 
 In development, the command next dev clears Node.js cache on run. This in turn initializes a new PrismaClient instance each time due to hot reloading that creates a connection to the database. This can quickly exhaust the database connections as each PrismaClient instance holds its own connection pool.
 
-(Prisma Instance)[[https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution]](https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution%5D)
+(Prisma Instance)[https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution]
 
 - create utils/db.ts
 
 ```ts
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 
 const prismaClientSingleton = () => {
-  return new PrismaClient()
-}
+  return new PrismaClient();
+};
 
-type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>
+type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
 
 const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClientSingleton | undefined
-}
+  prisma: PrismaClientSingleton | undefined;
+};
 
-const prisma = globalForPrisma.prisma ?? prismaClientSingleton()
+const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
 
-export default prisma
+export default prisma;
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 ```
 
 ### Connect Supabase with Prisma
 
-[﻿Useful Info](https://supabase.com/partners/integrations/prisma)
+[Useful Info](https://supabase.com/partners/integrations/prisma)
 
 - add to .env
 
@@ -905,29 +908,30 @@ model Profile {
   profileImage String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
+
 }
 ```
 
 ### CreateProfile Action - Complete
 
-[﻿Clerk User Metadata](https://clerk.com/docs/users/metadata)
+[Clerk User Metadata](https://clerk.com/docs/users/metadata)
 
 ```ts
-import db from './db'
-import { auth, clerkClient, currentUser } from '@clerk/nextjs/server'
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
+import db from './db';
+import { auth, clerkClient, currentUser } from '@clerk/nextjs/server';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export const createProfileAction = async (
   prevState: any,
   formData: FormData
 ) => {
   try {
-    const user = await currentUser()
-    if (!user) throw new Error('Please login to create a profile')
+    const user = await currentUser();
+    if (!user) throw new Error('Please login to create a profile');
 
-    const rawData = Object.fromEntries(formData)
-    const validatedFields = profileSchema.parse(rawData)
+    const rawData = Object.fromEntries(formData);
+    const validatedFields = profileSchema.parse(rawData);
 
     await db.profile.create({
       data: {
@@ -936,19 +940,19 @@ export const createProfileAction = async (
         profileImage: user.imageUrl ?? '',
         ...validatedFields,
       },
-    })
+    });
     await clerkClient.users.updateUserMetadata(user.id, {
       privateMetadata: {
         hasProfile: true,
       },
-    })
+    });
   } catch (error) {
     return {
       message: error instanceof Error ? error.message : 'An error occurred',
-    }
+    };
   }
-  redirect('/')
-}
+  redirect('/');
+};
 ```
 
 ### FetchProfileImage
@@ -957,8 +961,8 @@ actions.ts
 
 ```ts
 export const fetchProfileImage = async () => {
-  const user = await currentUser()
-  if (!user) return null
+  const user = await currentUser();
+  if (!user) return null;
 
   const profile = await db.profile.findUnique({
     where: {
@@ -967,27 +971,27 @@ export const fetchProfileImage = async () => {
     select: {
       profileImage: true,
     },
-  })
-  return profile?.profileImage
-}
+  });
+  return profile?.profileImage;
+};
 ```
 
 - components/navbar/UserIcon.tsx
 
 ```tsx
-import { LuUser2 } from 'react-icons/lu'
-import { fetchProfileImage } from '@/utils/actions'
+import { LuUser2 } from 'react-icons/lu';
+import { fetchProfileImage } from '@/utils/actions';
 
 async function UserIcon() {
-  const profileImage = await fetchProfileImage()
+  const profileImage = await fetchProfileImage();
 
   if (profileImage)
     return (
       <img src={profileImage} className='w-6 h-6 rounded-full object-cover' />
-    )
-  return <LuUser2 className='w-6 h-6 bg-primary rounded-full text-white' />
+    );
+  return <LuUser2 className='w-6 h-6 bg-primary rounded-full text-white' />;
 }
-export default UserIcon
+export default UserIcon;
 ```
 
 ### Modify Create Profile
@@ -1009,27 +1013,27 @@ actions.ts
 
 ```ts
 const getAuthUser = async () => {
-  const user = await currentUser()
+  const user = await currentUser();
   if (!user) {
-    throw new Error('You must be logged in to access this route')
+    throw new Error('You must be logged in to access this route');
   }
-  if (!user.privateMetadata.hasProfile) redirect('/profile/create')
-  return user
-}
+  if (!user.privateMetadata.hasProfile) redirect('/profile/create');
+  return user;
+};
 ```
 
 ```ts
 export const fetchProfile = async () => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
 
   const profile = await db.profile.findUnique({
     where: {
       clerkId: user.id,
     },
-  })
-  if (!profile) return redirect('/profile/create')
-  return profile
-}
+  });
+  if (!profile) return redirect('/profile/create');
+  return profile;
+};
 ```
 
 ```ts
@@ -1037,20 +1041,20 @@ export const updateProfileAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  return { message: 'update profile action' }
-}
+  return { message: 'update profile action' };
+};
 ```
 
 app/profile/page.tsx
 
 ```tsx
-import FormContainer from '@/components/form/FormContainer'
-import { updateProfileAction, fetchProfile } from '@/utils/actions'
-import FormInput from '@/components/form/FormInput'
-import { SubmitButton } from '@/components/form/Buttons'
+import FormContainer from '@/components/form/FormContainer';
+import { updateProfileAction, fetchProfile } from '@/utils/actions';
+import FormInput from '@/components/form/FormInput';
+import { SubmitButton } from '@/components/form/Buttons';
 
 async function ProfilePage() {
-  const profile = await fetchProfile()
+  const profile = await fetchProfile();
 
   return (
     <section>
@@ -1083,9 +1087,9 @@ async function ProfilePage() {
         </FormContainer>
       </div>
     </section>
-  )
+  );
 }
-export default ProfilePage
+export default ProfilePage;
 ```
 
 actions.ts
@@ -1095,26 +1099,26 @@ export const updateProfileAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const rawData = Object.fromEntries(formData)
+    const rawData = Object.fromEntries(formData);
 
-    const validatedFields = profileSchema.parse(rawData)
+    const validatedFields = profileSchema.parse(rawData);
 
     await db.profile.update({
       where: {
         clerkId: user.id,
       },
       data: validatedFields,
-    })
-    revalidatePath('/profile')
-    return { message: 'Profile updated successfully' }
+    });
+    revalidatePath('/profile');
+    return { message: 'Profile updated successfully' };
   } catch (error) {
     return {
       message: error instanceof Error ? error.message : 'An error occurred',
-    }
+    };
   }
-}
+};
 ```
 
 ### Alternative Error Handling
@@ -1123,11 +1127,11 @@ actions.ts
 
 ```ts
 const renderError = (error: unknown): { message: string } => {
-  console.log(error)
+  console.log(error);
   return {
     message: error instanceof Error ? error.message : 'An error occurred',
-  }
-}
+  };
+};
 ```
 
 ```ts
@@ -1135,14 +1139,14 @@ export const updateProfileAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const rawData = Object.fromEntries(formData)
+    const rawData = Object.fromEntries(formData);
 
-    const validatedFields = profileSchema.safeParse(rawData)
+    const validatedFields = profileSchema.safeParse(rawData);
     if (!validatedFields.success) {
-      const errors = validatedFields.error.errors.map((error) => error.message)
-      throw new Error(errors.join(','))
+      const errors = validatedFields.error.errors.map((error) => error.message);
+      throw new Error(errors.join(','));
     }
 
     await db.profile.update({
@@ -1150,13 +1154,13 @@ export const updateProfileAction = async (
         clerkId: user.id,
       },
       data: validatedFields.data,
-    })
-    revalidatePath('/profile')
-    return { message: 'Profile updated successfully' }
+    });
+    revalidatePath('/profile');
+    return { message: 'Profile updated successfully' };
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-}
+};
 ```
 
 ### ValidateWithZodSchema
@@ -1168,13 +1172,13 @@ export function validateWithZodSchema<T>(
   schema: ZodSchema<T>,
   data: unknown
 ): T {
-  const result = schema.safeParse(data)
+  const result = schema.safeParse(data);
   if (!result.success) {
-    const errors = result.error.errors.map((error) => error.message)
+    const errors = result.error.errors.map((error) => error.message);
 
-    throw new Error(errors.join(', '))
+    throw new Error(errors.join(', '));
   }
-  return result.data
+  return result.data;
 }
 ```
 
@@ -1183,17 +1187,17 @@ actions.ts
 ```ts
 // createProfileAction
 
-const validatedFields = validateWithZodSchema(profileSchema, rawData)
+const validatedFields = validateWithZodSchema(profileSchema, rawData);
 
 // updateProfileAction
-const validatedFields = validateWithZodSchema(profileSchema, rawData)
+const validatedFields = validateWithZodSchema(profileSchema, rawData);
 
 await db.profile.update({
   where: {
     clerkId: user.id,
   },
   data: validatedFields,
-})
+});
 ```
 
 ### ImageInput
@@ -1201,11 +1205,11 @@ await db.profile.update({
 components/form/ImageInput.tsx
 
 ```tsx
-import { Label } from '../ui/label'
-import { Input } from '../ui/input'
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
 
 function ImageInput() {
-  const name = 'image'
+  const name = 'image';
   return (
     <div className='mb-2'>
       <Label htmlFor={name} className='capitalize'>
@@ -1220,28 +1224,28 @@ function ImageInput() {
         className='max-w-xs'
       />
     </div>
-  )
+  );
 }
-export default ImageInput
+export default ImageInput;
 ```
 
 ### SubmitButton
 
 ```tsx
-type btnSize = 'default' | 'lg' | 'sm'
+type btnSize = 'default' | 'lg' | 'sm';
 
 type SubmitButtonProps = {
-  className?: string
-  text?: string
-  size?: btnSize
-}
+  className?: string;
+  text?: string;
+  size?: btnSize;
+};
 
 export function SubmitButton({
   className = '',
   text = 'submit',
   size = 'lg',
 }: SubmitButtonProps) {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <Button
       type='submit'
@@ -1258,7 +1262,7 @@ export function SubmitButton({
         text
       )}
     </Button>
-  )
+  );
 }
 ```
 
@@ -1267,31 +1271,31 @@ export function SubmitButton({
 components/form/ImageInputContainer.tsx
 
 ```tsx
-'use client'
-import { useState } from 'react'
-import Image from 'next/image'
-import { Button } from '../ui/button'
-import FormContainer from './FormContainer'
-import ImageInput from './ImageInput'
-import { SubmitButton } from './Buttons'
-import { type actionFunction } from '@/utils/types'
-import { LuUser2 } from 'react-icons/lu'
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import { Button } from '../ui/button';
+import FormContainer from './FormContainer';
+import ImageInput from './ImageInput';
+import { SubmitButton } from './Buttons';
+import { type actionFunction } from '@/utils/types';
+import { LuUser2 } from 'react-icons/lu';
 
 type ImageInputContainerProps = {
-  image: string
-  name: string
-  action: actionFunction
-  text: string
-  children?: React.ReactNode
-}
+  image: string;
+  name: string;
+  action: actionFunction;
+  text: string;
+  children?: React.ReactNode;
+};
 
 function ImageInputContainer(props: ImageInputContainerProps) {
-  const { image, name, action, text } = props
-  const [isUpdateFormVisible, setUpdateFormVisible] = useState(false)
+  const { image, name, action, text } = props;
+  const [isUpdateFormVisible, setUpdateFormVisible] = useState(false);
 
   const userIcon = (
     <LuUser2 className='w-24 h-24 bg-primary rounded-md text-white mb-4' />
-  )
+  );
   return (
     <div>
       {image ? (
@@ -1323,9 +1327,9 @@ function ImageInputContainer(props: ImageInputContainerProps) {
         </div>
       )}
     </div>
-  )
+  );
 }
-export default ImageInputContainer
+export default ImageInputContainer;
 ```
 
 ### updateProfileImageAction
@@ -1337,8 +1341,8 @@ export const updateProfileImageAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  return { message: 'Profile image updated successfully' }
-}
+  return { message: 'Profile image updated successfully' };
+};
 ```
 
 ### Profile Page
@@ -1348,18 +1352,18 @@ import {
   updateProfileAction,
   fetchProfile,
   updateProfileImageAction,
-} from '@/utils/actions'
+} from '@/utils/actions';
 
-import ImageInputContainer from '@/components/form/ImageInputContainer'
+import ImageInputContainer from '@/components/form/ImageInputContainer';
 
 /* image input container */
 
-;<ImageInputContainer
+<ImageInputContainer
   image={profile.profileImage}
   name={profile.username}
   action={updateProfileImageAction}
   text='Update Profile Image'
-/>
+/>;
 ```
 
 ### Remote Patterns
@@ -1375,9 +1379,9 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 ### imageSchema
@@ -1387,21 +1391,21 @@ schemas.ts
 ```ts
 export const imageSchema = z.object({
   image: validateFile(),
-})
+});
 
 function validateFile() {
-  const maxUploadSize = 1024 * 1024
-  const acceptedFileTypes = ['image/']
+  const maxUploadSize = 1024 * 1024;
+  const acceptedFileTypes = ['image/'];
   return z
     .instanceof(File)
     .refine((file) => {
-      return !file || file.size <= maxUploadSize
+      return !file || file.size <= maxUploadSize;
     }, `File size must be less than 1 MB`)
     .refine((file) => {
       return (
         !file || acceptedFileTypes.some((type) => file.type.startsWith(type))
-      )
-    }, 'File must be an image')
+      );
+    }, 'File must be an image');
 }
 ```
 
@@ -1417,16 +1421,16 @@ export const updateProfileImageAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const image = formData.get('image') as File
-    const validatedFields = validateWithZodSchema(imageSchema, { image })
+    const image = formData.get('image') as File;
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
 
-    return { message: 'Profile image updated successfully' }
+    return { message: 'Profile image updated successfully' };
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-}
+};
 ```
 
 ### Create Bucket, Setup Policy and API Keys
@@ -1445,29 +1449,29 @@ npm install @supabase/supabase-js
 utils/supabase.ts
 
 ```ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js';
 
-const bucket = 'home-away-draft'
+const bucket = 'home-away-draft';
 
 // Create a single supabase client for interacting with your database
 export const supabase = createClient(
   process.env.SUPABASE_URL as string,
   process.env.SUPABASE_KEY as string
-)
+);
 
 export const uploadImage = async (image: File) => {
-  const timestamp = Date.now()
+  const timestamp = Date.now();
   // const newName = `/users/${timestamp}-${image.name}`;
-  const newName = `${timestamp}-${image.name}`
+  const newName = `${timestamp}-${image.name}`;
 
   const { data, error } = await supabase.storage
     .from(bucket)
     .upload(newName, image, {
       cacheControl: '3600',
-    })
-  if (!data) throw new Error('Image upload failed')
-  return supabase.storage.from(bucket).getPublicUrl(newName).data.publicUrl
-}
+    });
+  if (!data) throw new Error('Image upload failed');
+  return supabase.storage.from(bucket).getPublicUrl(newName).data.publicUrl;
+};
 ```
 
 ### updateProfileImageAction
@@ -1477,11 +1481,11 @@ export const updateProfileImageAction = async (
   prevState: any,
   formData: FormData
 ) => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const image = formData.get('image') as File
-    const validatedFields = validateWithZodSchema(imageSchema, { image })
-    const fullPath = await uploadImage(validatedFields.image)
+    const image = formData.get('image') as File;
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
+    const fullPath = await uploadImage(validatedFields.image);
 
     await db.profile.update({
       where: {
@@ -1490,13 +1494,13 @@ export const updateProfileImageAction = async (
       data: {
         profileImage: fullPath,
       },
-    })
-    revalidatePath('/profile')
-    return { message: 'Profile image updated successfully' }
+    });
+    revalidatePath('/profile');
+    return { message: 'Profile image updated successfully' };
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-}
+};
 ```
 
 ### Remote Patterns
@@ -1516,9 +1520,9 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 ### Property Model
@@ -1552,7 +1556,8 @@ model Property {
 ### Property Schema
 
 - yes, no image 😜
-  schemas.ts
+
+schemas.ts
 
 ```ts
 export const propertySchema = z.object({
@@ -1578,8 +1583,8 @@ export const propertySchema = z.object({
   category: z.string(),
   description: z.string().refine(
     (description) => {
-      const wordCount = description.split(' ').length
-      return wordCount >= 10 && wordCount <= 1000
+      const wordCount = description.split(' ').length;
+      return wordCount >= 10 && wordCount <= 1000;
     },
     {
       message: 'description must be between 10 and 1000 words.',
@@ -1599,7 +1604,7 @@ export const propertySchema = z.object({
     message: 'bahts amount must be a positive number.',
   }),
   amenities: z.string(),
-})
+});
 ```
 
 ### createPropertyAction
@@ -1611,15 +1616,15 @@ export const createPropertyAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const rawData = Object.fromEntries(formData)
-    const validatedFields = validateWithZodSchema(propertySchema, rawData)
+    const rawData = Object.fromEntries(formData);
+    const validatedFields = validateWithZodSchema(propertySchema, rawData);
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-  redirect('/')
-}
+  redirect('/');
+};
 ```
 
 ### Create Rental Page
@@ -1627,10 +1632,10 @@ export const createPropertyAction = async (
 - app/rentals/create/page.tsx
 
 ```tsx
-import FormInput from '@/components/form/FormInput'
-import FormContainer from '@/components/form/FormContainer'
-import { createPropertyAction } from '@/utils/actions'
-import { SubmitButton } from '@/components/form/Buttons'
+import FormInput from '@/components/form/FormInput';
+import FormContainer from '@/components/form/FormContainer';
+import { createPropertyAction } from '@/utils/actions';
+import { SubmitButton } from '@/components/form/Buttons';
 
 function CreateProperty() {
   return (
@@ -1662,9 +1667,9 @@ function CreateProperty() {
         </FormContainer>
       </div>
     </section>
-  )
+  );
 }
-export default CreateProperty
+export default CreateProperty;
 ```
 
 ### Price Input
@@ -1672,15 +1677,15 @@ export default CreateProperty
 - components/form/PriceInput.tsx
 
 ```ts
-import { Label } from '../ui/label'
-import { Input } from '../ui/input'
-import { Prisma } from '@prisma/client'
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
+import { Prisma } from '@prisma/client';
 
-const name = Prisma.PropertyScalarFieldEnum.price
+const name = Prisma.PropertyScalarFieldEnum.price;
 // const name = 'price';
 type FormInputNumberProps = {
-  defaultValue?: number
-}
+  defaultValue?: number;
+};
 
 function PriceInput({ defaultValue }: FormInputNumberProps) {
   return (
@@ -1697,9 +1702,9 @@ function PriceInput({ defaultValue }: FormInputNumberProps) {
         required
       />
     </div>
-  )
+  );
 }
-export default PriceInput
+export default PriceInput;
 ```
 
 ```tsx
@@ -1712,20 +1717,20 @@ export default PriceInput
 - utils/categories.ts
 
 ```ts
-import { IconType } from 'react-icons'
-import { MdCabin } from 'react-icons/md'
+import { IconType } from 'react-icons';
+import { MdCabin } from 'react-icons/md';
 
-import { TbCaravan, TbTent, TbBuildingCottage } from 'react-icons/tb'
+import { TbCaravan, TbTent, TbBuildingCottage } from 'react-icons/tb';
 
-import { GiWoodCabin, GiMushroomHouse } from 'react-icons/gi'
-import { PiWarehouse, PiLighthouse, PiVan } from 'react-icons/pi'
+import { GiWoodCabin, GiMushroomHouse } from 'react-icons/gi';
+import { PiWarehouse, PiLighthouse, PiVan } from 'react-icons/pi';
 
-import { GoContainer } from 'react-icons/go'
+import { GoContainer } from 'react-icons/go';
 
 type Category = {
-  label: CategoryLabel
-  icon: IconType
-}
+  label: CategoryLabel;
+  icon: IconType;
+};
 
 export type CategoryLabel =
   | 'cabin'
@@ -1737,7 +1742,7 @@ export type CategoryLabel =
   | 'tiny'
   | 'magic'
   | 'warehouse'
-  | 'lodge'
+  | 'lodge';
 
 export const categories: Category[] = [
   {
@@ -1781,23 +1786,23 @@ export const categories: Category[] = [
     label: 'lodge',
     icon: GiWoodCabin,
   },
-]
+];
 ```
 
 ### Categories Input
 
 ```tsx
-import { Label } from '@/components/ui/label'
-import { categories } from '@/utils/categories'
+import { Label } from '@/components/ui/label';
+import { categories } from '@/utils/categories';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from '@/components/ui/select';
 
-const name = 'category'
+const name = 'category';
 function CategoriesInput({ defaultValue }: { defaultValue?: string }) {
   return (
     <div className='mb-2'>
@@ -1820,14 +1825,14 @@ function CategoriesInput({ defaultValue }: { defaultValue?: string }) {
                   <item.icon /> {item.label}
                 </span>
               </SelectItem>
-            )
+            );
           })}
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }
-export default CategoriesInput
+export default CategoriesInput;
 ```
 
 ```tsx
@@ -1840,14 +1845,14 @@ export default CategoriesInput
 - components/form/TextAreaInput.tsx
 
 ```tsx
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 type TextAreaInputProps = {
-  name: string
-  labelText?: string
-  defaultValue?: string
-}
+  name: string;
+  labelText?: string;
+  defaultValue?: string;
+};
 
 function TextAreaInput({ name, labelText, defaultValue }: TextAreaInputProps) {
   return (
@@ -1864,12 +1869,12 @@ function TextAreaInput({ name, labelText, defaultValue }: TextAreaInputProps) {
         className='leading-loose'
       />
     </div>
-  )
+  );
 }
 
 const tempDefaultDescription =
-  'Glamping Tuscan Style in an Aframe Cabin Tent, nestled in a beautiful olive orchard. AC, heat, Queen Bed, TV, Wi-Fi and an amazing view. Close to Weeki Wachee River State Park, mermaids, manatees, Chassahwitzka River and on the SC Bike Path. Kayaks available for rivers. Bathhouse, fire pit, Kitchenette, fresh eggs. Relax & enjoy fresh country air. No pets please. Ducks, hens and roosters roam the grounds. We have a Pot Cake Rescue from Bimini, Retriever and Pom dog. The space is inspiring and relaxing. Enjoy the beauty of the orchard. Spring trees are in blossom and harvested in Fall. We have a farm store where we sell our farm to table products'
-export default TextAreaInput
+  'Glamping Tuscan Style in an Aframe Cabin Tent, nestled in a beautiful olive orchard. AC, heat, Queen Bed, TV, Wi-Fi and an amazing view. Close to Weeki Wachee River State Park, mermaids, manatees, Chassahwitzka River and on the SC Bike Path. Kayaks available for rivers. Bathhouse, fire pit, Kitchenette, fresh eggs. Relax & enjoy fresh country air. No pets please. Ducks, hens and roosters roam the grounds. We have a Pot Cake Rescue from Bimini, Retriever and Pom dog. The space is inspiring and relaxing. Enjoy the beauty of the orchard. Spring trees are in blossom and harvested in Fall. We have a farm store where we sell our farm to table products';
+export default TextAreaInput;
 ```
 
 ```tsx
@@ -1886,7 +1891,7 @@ npm i world-countries
 - utils/countries.ts
 
 ```ts
-import countries from 'world-countries'
+import countries from 'world-countries';
 
 export const formattedCountries = countries.map((item) => ({
   code: item.cca2,
@@ -1894,25 +1899,25 @@ export const formattedCountries = countries.map((item) => ({
   flag: item.flag,
   location: item.latlng,
   region: item.region,
-}))
+}));
 export const findCountryByCode = (code: string) =>
-  formattedCountries.find((item) => item.code === code)
+  formattedCountries.find((item) => item.code === code);
 ```
 
 - components/form/CountriesInput.tsx
 
 ```tsx
-import { Label } from '@/components/ui/label'
-import { formattedCountries } from '@/utils/countries'
+import { Label } from '@/components/ui/label';
+import { formattedCountries } from '@/utils/countries';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from '@/components/ui/select';
 
-const name = 'country'
+const name = 'country';
 function CountriesInput({ defaultValue }: { defaultValue?: string }) {
   return (
     <div className='mb-2'>
@@ -1935,14 +1940,14 @@ function CountriesInput({ defaultValue }: { defaultValue?: string }) {
                   {item.flag} {item.name}
                 </span>
               </SelectItem>
-            )
+            );
           })}
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }
-export default CountriesInput
+export default CountriesInput;
 ```
 
 ```tsx
@@ -1957,32 +1962,32 @@ export default CountriesInput
 - components/form/CounterInput.tsx
 
 ```tsx
-'use client'
-import { Card, CardHeader } from '@/components/ui/card'
-import { LuMinus, LuPlus } from 'react-icons/lu'
+'use client';
+import { Card, CardHeader } from '@/components/ui/card';
+import { LuMinus, LuPlus } from 'react-icons/lu';
 
-import { Button } from '../ui/button'
-import { useState } from 'react'
+import { Button } from '../ui/button';
+import { useState } from 'react';
 
 function CounterInput({
   detail,
   defaultValue,
 }: {
-  detail: string
-  defaultValue?: number
+  detail: string;
+  defaultValue?: number;
 }) {
-  const [count, setCount] = useState(defaultValue || 0)
+  const [count, setCount] = useState(defaultValue || 0);
   const increaseCount = () => {
-    setCount((prevCount) => prevCount + 1)
-  }
+    setCount((prevCount) => prevCount + 1);
+  };
   const decreaseCount = () => {
     setCount((prevCount) => {
       if (prevCount > 0) {
-        return prevCount - 1
+        return prevCount - 1;
       }
-      return prevCount
-    })
-  }
+      return prevCount;
+    });
+  };
   return (
     <Card className='mb-4'>
       <input type='hidden' name={detail} value={count} />
@@ -2016,10 +2021,10 @@ function CounterInput({
         </div>
       </CardHeader>
     </Card>
-  )
+  );
 }
 
-export default CounterInput
+export default CounterInput;
 ```
 
 ```tsx
@@ -2031,7 +2036,7 @@ return (
     <CounterInput detail='beds' />
     <CounterInput detail='baths' />
   </>
-)
+);
 ```
 
 ### Amenities
@@ -2039,12 +2044,12 @@ return (
 - utils/amenities.ts
 
 ```ts
-import { IconType } from 'react-icons'
+import { IconType } from 'react-icons';
 export type Amenity = {
-  name: string
-  icon: IconType
-  selected: boolean
-}
+  name: string;
+  icon: IconType;
+  selected: boolean;
+};
 import {
   FiCloud,
   FiTruck,
@@ -2066,7 +2071,7 @@ import {
   FiRadio,
   FiFilm,
   FiTv,
-} from 'react-icons/fi'
+} from 'react-icons/fi';
 
 export const amenities: Amenity[] = [
   { name: 'unlimited cloud storage', icon: FiCloud, selected: false },
@@ -2105,7 +2110,7 @@ export const amenities: Amenity[] = [
   { name: 'cool box (hole in the ground)', icon: FiRadio, selected: false },
   { name: 'lanterns (fireflies)', icon: FiFilm, selected: false },
   { name: 'first aid kit (hope and prayers)', icon: FiTv, selected: false },
-]
+];
 
 export const conservativeAmenities: Amenity[] = [
   { name: 'cloud storage', icon: FiCloud, selected: false },
@@ -2128,32 +2133,32 @@ export const conservativeAmenities: Amenity[] = [
   { name: 'cool box', icon: FiRadio, selected: false },
   { name: 'lanterns', icon: FiFilm, selected: false },
   { name: 'first aid kit', icon: FiTv, selected: false },
-]
+];
 ```
 
 - components/form/AmenitiesInput.tsx
 
 ```tsx
-'use client'
-import { useState } from 'react'
-import { amenities, Amenity } from '@/utils/amenities'
-import { Checkbox } from '@/components/ui/checkbox'
+'use client';
+import { useState } from 'react';
+import { amenities, Amenity } from '@/utils/amenities';
+import { Checkbox } from '@/components/ui/checkbox';
 
 function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
   const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(
     defaultValue || amenities
-  )
+  );
 
   const handleChange = (amenity: Amenity) => {
     setSelectedAmenities((prev) => {
       return prev.map((a) => {
         if (a.name === amenity.name) {
-          return { ...a, selected: !a.selected }
+          return { ...a, selected: !a.selected };
         }
-        return a
-      })
-    })
-  }
+        return a;
+      });
+    });
+  };
 
   return (
     <section>
@@ -2181,9 +2186,9 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
         ))}
       </div>
     </section>
-  )
+  );
 }
-export default AmenitiesInput
+export default AmenitiesInput;
 ```
 
 ```tsx
@@ -2192,7 +2197,7 @@ return (
     <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
     <AmenitiesInput />
   </>
-)
+);
 ```
 
 ### createRentalAction
@@ -2202,14 +2207,14 @@ export const createPropertyAction = async (
   prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   try {
-    const rawData = Object.fromEntries(formData)
-    const file = formData.get('image') as File
+    const rawData = Object.fromEntries(formData);
+    const file = formData.get('image') as File;
 
-    const validatedFields = validateWithZodSchema(propertySchema, rawData)
-    const validatedFile = validateWithZodSchema(imageSchema, { image: file })
-    const fullPath = await uploadImage(validatedFile.image)
+    const validatedFields = validateWithZodSchema(propertySchema, rawData);
+    const validatedFile = validateWithZodSchema(imageSchema, { image: file });
+    const fullPath = await uploadImage(validatedFile.image);
 
     await db.property.create({
       data: {
@@ -2217,12 +2222,12 @@ export const createPropertyAction = async (
         image: fullPath,
         profileId: user.id,
       },
-    })
+    });
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-  redirect('/')
-}
+  redirect('/');
+};
 ```
 
 ### fetchProperties
@@ -2231,13 +2236,13 @@ utils/types.ts
 
 ```ts
 export type PropertyCardProps = {
-  image: string
-  id: string
-  name: string
-  tagline: string
-  country: string
-  price: number
-}
+  image: string;
+  id: string;
+  name: string;
+  tagline: string;
+  country: string;
+  price: number;
+};
 ```
 
 actions.ts
@@ -2247,8 +2252,8 @@ export const fetchProperties = async ({
   search = '',
   category,
 }: {
-  search?: string
-  category?: string
+  search?: string;
+  category?: string;
 }) => {
   const properties = await db.property.findMany({
     where: {
@@ -2266,9 +2271,9 @@ export const fetchProperties = async ({
       image: true,
       price: true,
     },
-  })
-  return properties
-}
+  });
+  return properties;
+};
 ```
 
 ### Home Page
@@ -2280,8 +2285,8 @@ export const fetchProperties = async ({
   - PropertiesList.tsx
 
 ```tsx
-import CategoriesList from '@/components/home/CategoriesList'
-import PropertiesContainer from '@/components/home/PropertiesContainer'
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
 
 function HomePage() {
   return (
@@ -2289,21 +2294,21 @@ function HomePage() {
       <CategoriesList />
       <PropertiesContainer />
     </section>
-  )
+  );
 }
-export default HomePage
+export default HomePage;
 ```
 
 ### Search Params
 
 ```tsx
-import CategoriesList from '@/components/home/CategoriesList'
-import PropertiesContainer from '@/components/home/PropertiesContainer'
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
 
 function HomePage({
   searchParams,
 }: {
-  searchParams: { category?: string; search?: string }
+  searchParams: { category?: string; search?: string };
 }) {
   // console.log(searchParams);
 
@@ -2318,32 +2323,32 @@ function HomePage({
         search={searchParams?.search}
       />
     </section>
-  )
+  );
 }
-export default HomePage
+export default HomePage;
 ```
 
 ### CategoriesList
 
 ```tsx
-import { categories } from '@/utils/categories'
-import { ScrollArea, ScrollBar } from '../ui/scroll-area'
-import Link from 'next/link'
+import { categories } from '@/utils/categories';
+import { ScrollArea, ScrollBar } from '../ui/scroll-area';
+import Link from 'next/link';
 
 function CategoriesList({
   category,
   search,
 }: {
-  category?: string
-  search?: string
+  category?: string;
+  search?: string;
 }) {
-  const searchTerm = search ? `&search=${search}` : ''
+  const searchTerm = search ? `&search=${search}` : '';
   return (
     <section>
       <ScrollArea className='py-6'>
         <div className='flex gap-x-4'>
           {categories.map((item) => {
-            const isActive = item.label === category
+            const isActive = item.label === category;
             return (
               <Link
                 key={item.label}
@@ -2358,31 +2363,31 @@ function CategoriesList({
                   <p className='capitalize text-sm mt-1'>{item.label}</p>
                 </article>
               </Link>
-            )
+            );
           })}
         </div>
         <ScrollBar orientation='horizontal' />
       </ScrollArea>
     </section>
-  )
+  );
 }
-export default CategoriesList
+export default CategoriesList;
 ```
 
 ### EmptyList
 
 ```tsx
-import { Button } from '../ui/button'
-import Link from 'next/link'
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 function EmptyList({
   heading = 'No items in the list.',
   message = 'Keep exploring our properties.',
   btnText = 'back home',
 }: {
-  heading?: string
-  message?: string
-  btnText?: string
+  heading?: string;
+  message?: string;
+  btnText?: string;
 }) {
   return (
     <div className='mt-4'>
@@ -2392,30 +2397,30 @@ function EmptyList({
         <Link href='/'>{btnText}</Link>
       </Button>
     </div>
-  )
+  );
 }
-export default EmptyList
+export default EmptyList;
 ```
 
 ### PropertiesContainer
 
 ```tsx
-import { fetchProperties } from '@/utils/actions'
-import PropertiesList from './PropertiesList'
-import EmptyList from './EmptyList'
-import type { PropertyCardProps } from '@/utils/types'
+import { fetchProperties } from '@/utils/actions';
+import PropertiesList from './PropertiesList';
+import EmptyList from './EmptyList';
+import type { PropertyCardProps } from '@/utils/types';
 
 async function PropertiesContainer({
   category,
   search,
 }: {
-  category?: string
-  search?: string
+  category?: string;
+  search?: string;
 }) {
   const properties: PropertyCardProps[] = await fetchProperties({
     category,
     search,
-  })
+  });
 
   if (properties.length === 0) {
     return (
@@ -2424,12 +2429,12 @@ async function PropertiesContainer({
         message='Try changing or removing some of your filters.'
         btnText='Clear Filters'
       />
-    )
+    );
   }
 
-  return <PropertiesList properties={properties} />
+  return <PropertiesList properties={properties} />;
 }
-export default PropertiesContainer
+export default PropertiesContainer;
 ```
 
 ### Card Components
@@ -2445,19 +2450,19 @@ export default PropertiesContainer
 ### PropertiesList
 
 ```tsx
-import PropertyCard from '../card/PropertyCard'
-import type { PropertyCardProps } from '@/utils/types'
+import PropertyCard from '../card/PropertyCard';
+import type { PropertyCardProps } from '@/utils/types';
 
 function PropertiesList({ properties }: { properties: PropertyCardProps[] }) {
   return (
     <section className='mt-4 gap-8 grid sm:grid-cols-2  lg:grid-cols-3  xl:grid-cols-4'>
       {properties.map((property) => {
-        return <PropertyCard key={property.id} property={property} />
+        return <PropertyCard key={property.id} property={property} />;
       })}
     </section>
-  )
+  );
 }
-export default PropertiesList
+export default PropertiesList;
 ```
 
 ### formatCurrency
@@ -2466,30 +2471,30 @@ export default PropertiesList
 
 ```ts
 export const formatCurrency = (amount: number | null) => {
-  const value = amount || 0
+  const value = amount || 0;
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
-  }).format(value)
-}
+  }).format(value);
+};
 ```
 
 ### PropertyCard
 
 ```tsx
-import Image from 'next/image'
-import Link from 'next/link'
-import CountryFlagAndName from './CountryFlagAndName'
-import PropertyRating from './PropertyRating'
-import FavoriteToggleButton from './FavoriteToggleButton'
-import { PropertyCardProps } from '@/utils/types'
-import { formatCurrency } from '@/utils/format'
+import Image from 'next/image';
+import Link from 'next/link';
+import CountryFlagAndName from './CountryFlagAndName';
+import PropertyRating from './PropertyRating';
+import FavoriteToggleButton from './FavoriteToggleButton';
+import { PropertyCardProps } from '@/utils/types';
+import { formatCurrency } from '@/utils/format';
 
 function PropertyCard({ property }: { property: PropertyCardProps }) {
-  const { name, image, price } = property
-  const { country, id: propertyId, tagline } = property
+  const { name, image, price } = property;
+  const { country, id: propertyId, tagline } = property;
 
   return (
     <article className='group relative'>
@@ -2524,39 +2529,39 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
         {/* favorite toggle button */}
       </div>
     </article>
-  )
+  );
 }
-export default PropertyCard
+export default PropertyCard;
 ```
 
 ### Property Rating
 
 ```tsx
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa';
 
 async function PropertyRating({
   propertyId,
   inPage,
 }: {
-  propertyId: string
-  inPage: boolean
+  propertyId: string;
+  inPage: boolean;
 }) {
   // temp
-  const rating = 4.7
-  const count = 100
+  const rating = 4.7;
+  const count = 100;
 
-  const className = `flex gap-1 items-center ${inPage ? 'text-md' : 'text-xs'}`
-  const countText = count > 1 ? 'reviews' : 'review'
-  const countValue = `(${count}) ${inPage ? countText : ''}`
+  const className = `flex gap-1 items-center ${inPage ? 'text-md' : 'text-xs'}`;
+  const countText = count > 1 ? 'reviews' : 'review';
+  const countValue = `(${count}) ${inPage ? countText : ''}`;
   return (
     <span className={className}>
       <FaStar className='w-3 h-3' />
       {rating} {countValue}
     </span>
-  )
+  );
 }
 
-export default PropertyRating
+export default PropertyRating;
 ```
 
 ```tsx
@@ -2566,16 +2571,16 @@ export default PropertyRating
 ### FavoriteToggleButton
 
 ```tsx
-import { FaHeart } from 'react-icons/fa'
-import { Button } from '@/components/ui/button'
+import { FaHeart } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
 function FavoriteToggleButton({ propertyId }: { propertyId: string }) {
   return (
     <Button size='icon' variant='outline' className='p-2 cursor-pointer'>
       <FaHeart />
     </Button>
-  )
+  );
 }
-export default FavoriteToggleButton
+export default FavoriteToggleButton;
 ```
 
 ```tsx
@@ -2587,21 +2592,21 @@ export default FavoriteToggleButton
 ### CountryFlagAndName
 
 ```tsx
-import { findCountryByCode } from '@/utils/countries'
+import { findCountryByCode } from '@/utils/countries';
 
 function CountryFlagAndName({ countryCode }: { countryCode: string }) {
-  const validCountry = findCountryByCode(countryCode)
+  const validCountry = findCountryByCode(countryCode);
   const countryName =
     validCountry!.name.length > 20
       ? `${validCountry!.name.substring(0, 20)}...`
-      : validCountry!.name
+      : validCountry!.name;
   return (
     <span className='flex justify-between items-center gap-2 text-sm '>
       {validCountry?.flag} {countryName}
     </span>
-  )
+  );
 }
-export default CountryFlagAndName
+export default CountryFlagAndName;
 ```
 
 ```tsx
@@ -2611,10 +2616,11 @@ export default CountryFlagAndName
 ### Suspense
 
 - app/loading.tsx - always an option
-  components/card/LoadingCards.tsx
+
+components/card/LoadingCards.tsx
 
 ```tsx
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@/components/ui/skeleton';
 
 function LoadingCards() {
   return (
@@ -2624,9 +2630,9 @@ function LoadingCards() {
       <SkeletonCard />
       <SkeletonCard />
     </section>
-  )
+  );
 }
-export default LoadingCards
+export default LoadingCards;
 
 export function SkeletonCard() {
   return (
@@ -2635,7 +2641,7 @@ export function SkeletonCard() {
       <Skeleton className='h-4 mt-2 w-3/4' />
       <Skeleton className='h-4 mt-2 w-1/2' />
     </div>
-  )
+  );
 }
 ```
 
@@ -2645,14 +2651,14 @@ app/page.tsx
 - make sure you fetch in component not page
 
 ```tsx
-import CategoriesList from '@/components/home/CategoriesList'
-import PropertiesContainer from '@/components/home/PropertiesContainer'
-import LoadingCards from '@/components/card/LoadingCards'
-import { Suspense } from 'react'
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
+import LoadingCards from '@/components/card/LoadingCards';
+import { Suspense } from 'react';
 function HomePage({
   searchParams,
 }: {
-  searchParams: { category?: string; search?: string }
+  searchParams: { category?: string; search?: string };
 }) {
   return (
     <section>
@@ -2667,9 +2673,9 @@ function HomePage({
         />
       </Suspense>
     </section>
-  )
+  );
 }
-export default HomePage
+export default HomePage;
 ```
 
 ### SearchInput
@@ -2681,53 +2687,54 @@ npm i use-debounce
 components/navbar/NavSearch.tsx
 
 ```tsx
-'use client'
-import { Input } from '../ui/input'
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
-import { useDebouncedCallback } from 'use-debounce'
-import { useState, useEffect } from 'react'
+'use client';
+import { Input } from '../ui/input';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
+import { useState, useEffect } from 'react';
 
 function NavSearch() {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  const pathname = usePathname()
-  const { replace } = useRouter()
+  const pathname = usePathname();
+  const { replace } = useRouter();
   const [search, setSearch] = useState(
     searchParams.get('search')?.toString() || ''
-  )
+  );
   const handleSearch = useDebouncedCallback((value: string) => {
-    const params = new URLSearchParams(searchParams)
+    const params = new URLSearchParams(searchParams);
     if (value) {
-      params.set('search', value)
+      params.set('search', value);
     } else {
-      params.delete('search')
+      params.delete('search');
     }
-    replace(`${pathname}?${params.toString()}`)
-  }, 300)
+    replace(`${pathname}?${params.toString()}`);
+  }, 300);
   useEffect(() => {
     if (!searchParams.get('search')) {
-      setSearch('')
+      setSearch('');
     }
-  }, [searchParams.get('search')])
+  }, [searchParams.get('search')]);
   return (
     <Input
       type='search'
       placeholder='find a property...'
       className='max-w-xs dark:bg-muted '
       onChange={(e) => {
-        setSearch(e.target.value)
-        handleSearch(e.target.value)
+        setSearch(e.target.value);
+        handleSearch(e.target.value);
       }}
       value={search}
     />
-  )
+  );
 }
-export default NavSearch
+export default NavSearch;
 ```
 
 ### Favorites Model
 
 ```prisma
+
 model Profile {
 favorites    Favorite[]
 }
@@ -2759,8 +2766,8 @@ npx prisma db push
 components/form/Buttons.tsx
 
 ```tsx
-import { SignInButton } from '@clerk/nextjs'
-import { FaRegHeart, FaHeart } from 'react-icons/fa'
+import { SignInButton } from '@clerk/nextjs';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
 
 export const CardSignInButton = () => {
   return (
@@ -2775,27 +2782,27 @@ export const CardSignInButton = () => {
         <FaRegHeart />
       </Button>
     </SignInButton>
-  )
-}
+  );
+};
 ```
 
 components/card/FavoriteToggleButton.tsx
 
 ```tsx
-import { FaHeart } from 'react-icons/fa'
-import { Button } from '@/components/ui/button'
-import { auth } from '@clerk/nextjs/server'
-import { CardSignInButton } from '../form/Buttons'
+import { FaHeart } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
+import { auth } from '@clerk/nextjs/server';
+import { CardSignInButton } from '../form/Buttons';
 function FavoriteToggleButton({ propertyId }: { propertyId: string }) {
-  const { userId } = auth()
-  if (!userId) return <CardSignInButton />
+  const { userId } = auth();
+  if (!userId) return <CardSignInButton />;
   return (
     <Button size='icon' variant='outline' className='p-2 cursor-pointer'>
       <FaHeart />
     </Button>
-  )
+  );
 }
-export default FavoriteToggleButton
+export default FavoriteToggleButton;
 ```
 
 ### fetchFavorite
@@ -2806,9 +2813,9 @@ actions.ts
 export const fetchFavoriteId = async ({
   propertyId,
 }: {
-  propertyId: string
+  propertyId: string;
 }) => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   const favorite = await db.favorite.findFirst({
     where: {
       propertyId,
@@ -2817,29 +2824,29 @@ export const fetchFavoriteId = async ({
     select: {
       id: true,
     },
-  })
-  return favorite?.id || null
-}
+  });
+  return favorite?.id || null;
+};
 export const toggleFavoriteAction = async () => {
-  return { message: 'toggle favorite' }
-}
+  return { message: 'toggle favorite' };
+};
 ```
 
 ### FavoriteToggleButton - Complete
 
 ```tsx
-import { auth } from '@clerk/nextjs/server'
-import { CardSignInButton } from '../form/Buttons'
-import { fetchFavoriteId } from '@/utils/actions'
-import FavoriteToggleForm from './FavoriteToggleForm'
+import { auth } from '@clerk/nextjs/server';
+import { CardSignInButton } from '../form/Buttons';
+import { fetchFavoriteId } from '@/utils/actions';
+import FavoriteToggleForm from './FavoriteToggleForm';
 async function FavoriteToggleButton({ propertyId }: { propertyId: string }) {
-  const { userId } = auth()
-  if (!userId) return <CardSignInButton />
-  const favoriteId = await fetchFavoriteId({ propertyId })
+  const { userId } = auth();
+  if (!userId) return <CardSignInButton />;
+  const favoriteId = await fetchFavoriteId({ propertyId });
 
-  return <FavoriteToggleForm favoriteId={favoriteId} propertyId={propertyId} />
+  return <FavoriteToggleForm favoriteId={favoriteId} propertyId={propertyId} />;
 }
-export default FavoriteToggleButton
+export default FavoriteToggleButton;
 ```
 
 ### CardSubmitButton
@@ -2848,7 +2855,7 @@ components/form/Buttons.tsx
 
 ```tsx
 export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <Button
       type='submit'
@@ -2864,42 +2871,42 @@ export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
         <FaRegHeart />
       )}
     </Button>
-  )
-}
+  );
+};
 ```
 
 ### FavoriteToggleForm
 
 ```tsx
-'use client'
+'use client';
 
-import { usePathname } from 'next/navigation'
-import FormContainer from '../form/FormContainer'
-import { toggleFavoriteAction } from '@/utils/actions'
-import { CardSubmitButton } from '../form/Buttons'
+import { usePathname } from 'next/navigation';
+import FormContainer from '../form/FormContainer';
+import { toggleFavoriteAction } from '@/utils/actions';
+import { CardSubmitButton } from '../form/Buttons';
 
 type FavoriteToggleFormProps = {
-  propertyId: string
-  favoriteId: string | null
-}
+  propertyId: string;
+  favoriteId: string | null;
+};
 
 function FavoriteToggleForm({
   propertyId,
   favoriteId,
 }: FavoriteToggleFormProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const toggleAction = toggleFavoriteAction.bind(null, {
     propertyId,
     favoriteId,
     pathname,
-  })
+  });
   return (
     <FormContainer action={toggleAction}>
       <CardSubmitButton isFavorite={favoriteId ? true : false} />
     </FormContainer>
-  )
+  );
 }
-export default FavoriteToggleForm
+export default FavoriteToggleForm;
 ```
 
 ### toggleFavoriteAction
@@ -2908,33 +2915,33 @@ actions.ts
 
 ```ts
 export const toggleFavoriteAction = async (prevState: {
-  propertyId: string
-  favoriteId: string | null
-  pathname: string
+  propertyId: string;
+  favoriteId: string | null;
+  pathname: string;
 }) => {
-  const user = await getAuthUser()
-  const { propertyId, favoriteId, pathname } = prevState
+  const user = await getAuthUser();
+  const { propertyId, favoriteId, pathname } = prevState;
   try {
     if (favoriteId) {
       await db.favorite.delete({
         where: {
           id: favoriteId,
         },
-      })
+      });
     } else {
       await db.favorite.create({
         data: {
           propertyId,
           profileId: user.id,
         },
-      })
+      });
     }
-    revalidatePath(pathname)
-    return { message: favoriteId ? 'Removed from Faves' : 'Added to Faves' }
+    revalidatePath(pathname);
+    return { message: favoriteId ? 'Removed from Faves' : 'Added to Faves' };
   } catch (error) {
-    return renderError(error)
+    return renderError(error);
   }
-}
+};
 ```
 
 ### fetchFavorites
@@ -2943,7 +2950,7 @@ actions.ts
 
 ```ts
 export const fetchFavorites = async () => {
-  const user = await getAuthUser()
+  const user = await getAuthUser();
   const favorites = await db.favorite.findMany({
     where: {
       profileId: user.id,
@@ -2960,9 +2967,9 @@ export const fetchFavorites = async () => {
         },
       },
     },
-  })
-  return favorites.map((favorite) => favorite.property)
-}
+  });
+  return favorites.map((favorite) => favorite.property);
+};
 ```
 
 ### Favorites Page
@@ -2970,32 +2977,32 @@ export const fetchFavorites = async () => {
 - favorites/loading.tsx
 
 ```tsx
-'use client'
-import LoadingCards from '@/components/card/LoadingCards'
+'use client';
+import LoadingCards from '@/components/card/LoadingCards';
 
 function loading() {
-  return <LoadingCards />
+  return <LoadingCards />;
 }
-export default loading
+export default loading;
 ```
 
 - favorites/page.tsx
 
 ```tsx
-import EmptyList from '@/components/home/EmptyList'
-import PropertiesList from '@/components/home/PropertiesList'
-import { fetchFavorites } from '@/utils/actions'
+import EmptyList from '@/components/home/EmptyList';
+import PropertiesList from '@/components/home/PropertiesList';
+import { fetchFavorites } from '@/utils/actions';
 
 async function FavoritesPage() {
-  const favorites = await fetchFavorites()
+  const favorites = await fetchFavorites();
 
   if (favorites.length === 0) {
-    return <EmptyList />
+    return <EmptyList />;
   }
 
-  return <PropertiesList properties={favorites} />
+  return <PropertiesList properties={favorites} />;
 }
-export default FavoritesPage
+export default FavoritesPage;
 ```
 
 ### fetchPropertyDetails
@@ -3009,37 +3016,37 @@ export const fetchPropertyDetails = (id: string) => {
     include: {
       profile: true,
     },
-  })
-}
+  });
+};
 ```
 
 - properties/[id]/loading.tsx
 
 ```ts
-'use client'
+'use client';
 
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@/components/ui/skeleton';
 function loading() {
-  return <Skeleton className='h-[300px] md:h-[500px] w-full rounded' />
+  return <Skeleton className='h-[300px] md:h-[500px] w-full rounded' />;
 }
 
-export default loading
+export default loading;
 ```
 
 - properties/[id]/page.tsx
 
 ```tsx
-import { fetchPropertyDetails } from '@/utils/actions'
-import { redirect } from 'next/navigation'
+import { fetchPropertyDetails } from '@/utils/actions';
+import { redirect } from 'next/navigation';
 
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
-  const property = await fetchPropertyDetails(params.id)
-  if (!property) redirect('/')
-  const { baths, bedrooms, beds, guests } = property
-  const details = { baths, bedrooms, beds, guests }
-  return <div>PropertyDetailsPage</div>
+  const property = await fetchPropertyDetails(params.id);
+  if (!property) redirect('/');
+  const { baths, bedrooms, beds, guests } = property;
+  const details = { baths, bedrooms, beds, guests };
+  return <div>PropertyDetailsPage</div>;
 }
-export default PropertyDetailsPage
+export default PropertyDetailsPage;
 ```
 
 ### BreadCrumbs
@@ -3054,7 +3061,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
+} from '@/components/ui/breadcrumb';
 
 function BreadCrumbs({ name }: { name: string }) {
   return (
@@ -3069,9 +3076,9 @@ function BreadCrumbs({ name }: { name: string }) {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }
-export default BreadCrumbs
+export default BreadCrumbs;
 ```
 
 - properties/[id]/page.tsx
@@ -3088,12 +3095,12 @@ return (
       </div>
     </header>
   </section>
-)
+);
 ```
 
 ### ShareButton
 
-[﻿React Share](https://www.npmjs.com/package/react-share)
+[React Share](https://www.npmjs.com/package/react-share)
 
 ```sh
 npm i react-share
@@ -3102,14 +3109,14 @@ npm i react-share
 - components/properties/ShareButton.tsx
 
 ```tsx
-'use client'
+'use client';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover'
-import { Button } from '../ui/button'
-import { LuShare2 } from 'react-icons/lu'
+} from '@/components/ui/popover';
+import { Button } from '../ui/button';
+import { LuShare2 } from 'react-icons/lu';
 
 import {
   TwitterShareButton,
@@ -3118,17 +3125,17 @@ import {
   TwitterIcon,
   EmailIcon,
   LinkedinIcon,
-} from 'react-share'
+} from 'react-share';
 
 function ShareButton({
   propertyId,
   name,
 }: {
-  propertyId: string
-  name: string
+  propertyId: string;
+  name: string;
 }) {
-  const url = process.env.NEXT_PUBLIC_WEBSITE_URL
-  const shareLink = `${url}/properties/${propertyId}`
+  const url = process.env.NEXT_PUBLIC_WEBSITE_URL;
+  const shareLink = `${url}/properties/${propertyId}`;
 
   return (
     <Popover>
@@ -3154,9 +3161,9 @@ function ShareButton({
         </EmailShareButton>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
-export default ShareButton
+export default ShareButton;
 ```
 
 - properties/[id]/page.tsx
@@ -3167,7 +3174,7 @@ return (
     <ShareButton name={property.name} propertyId={property.id} />
     <FavoriteToggleButton propertyId={property.id} />
   </div>
-)
+);
 ```
 
 ### ImageContainer
@@ -3175,14 +3182,14 @@ return (
 - components/properties/ImageContainer.tsx
 
 ```tsx
-import Image from 'next/image'
+import Image from 'next/image';
 
 function ImageContainer({
   mainImage,
   name,
 }: {
-  mainImage: string
-  name: string
+  mainImage: string;
+  name: string;
 }) {
   return (
     <section className='h-[300px] md:h-[500px] relative mt-8'>
@@ -3195,9 +3202,9 @@ function ImageContainer({
         priority
       />
     </section>
-  )
+  );
 }
-export default ImageContainer
+export default ImageContainer;
 ```
 
 - properties/[id]/page.tsx
@@ -3223,7 +3230,7 @@ return (
       {/* calendar */}
     </div>
   </section>
-)
+);
 ```
 
 ### Calendar - Initial Setup
@@ -3231,18 +3238,18 @@ return (
 - components/properties/booking/BookingCalendar.tsx
 
 ```tsx
-'use client'
-import { useState } from 'react'
-import { Calendar } from '@/components/ui/calendar'
-import { DateRange } from 'react-day-picker'
+'use client';
+import { useState } from 'react';
+import { Calendar } from '@/components/ui/calendar';
+import { DateRange } from 'react-day-picker';
 
 export default function App() {
-  const currentDate = new Date()
+  const currentDate = new Date();
   const defaultSelected: DateRange = {
     from: undefined,
     to: undefined,
-  }
-  const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
+  };
+  const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
 
   return (
     <Calendar
@@ -3252,7 +3259,7 @@ export default function App() {
       selected={range}
       onSelect={setRange}
     />
-  )
+  );
 }
 ```
 
@@ -3271,23 +3278,23 @@ export default function App() {
 
 ```ts
 export function formatQuantity(quantity: number, noun: string): string {
-  return quantity === 1 ? `${quantity} ${noun}` : `${quantity} ${noun}s`
+  return quantity === 1 ? `${quantity} ${noun}` : `${quantity} ${noun}s`;
 }
 ```
 
 - components/properties/PropertyDetails.tsx
 
 ```tsx
-import { formatQuantity } from '@/utils/format'
+import { formatQuantity } from '@/utils/format';
 
 type PropertyDetailsProps = {
   details: {
-    bedrooms: number
-    baths: number
-    guests: number
-    beds: number
-  }
-}
+    bedrooms: number;
+    baths: number;
+    guests: number;
+    beds: number;
+  };
+};
 
 function PropertyDetails({
   details: { bedrooms, baths, guests, beds },
@@ -3299,9 +3306,9 @@ function PropertyDetails({
       <span>{formatQuantity(guests, 'guest')} &middot; </span>
       <span>{formatQuantity(beds, 'bed')}</span>
     </p>
-  )
+  );
 }
-export default PropertyDetails
+export default PropertyDetails;
 ```
 
 - properties/[id]/page.tsx
@@ -3315,14 +3322,14 @@ export default PropertyDetails
 - components/properties/UserInfo.tsx
 
 ```tsx
-import Image from 'next/image'
+import Image from 'next/image';
 
 type UserInfoProps = {
   profile: {
-    profileImage: string
-    firstName: string
-  }
-}
+    profileImage: string;
+    firstName: string;
+  };
+};
 
 function UserInfo({ profile: { profileImage, firstName } }: UserInfoProps) {
   return (
@@ -3344,18 +3351,18 @@ function UserInfo({ profile: { profileImage, firstName } }: UserInfoProps) {
         </p>
       </div>
     </article>
-  )
+  );
 }
-export default UserInfo
+export default UserInfo;
 ```
 
 - properties/[id]/page.tsx
 
 ```tsx
-const firstName = property.profile.firstName
-const profileImage = property.profile.profileImage
+const firstName = property.profile.firstName;
+const profileImage = property.profile.profileImage;
 
-;<UserInfo profile={{ firstName, profileImage }} />
+<UserInfo profile={{ firstName, profileImage }} />;
 ```
 
 ### Description
@@ -3364,31 +3371,31 @@ const profileImage = property.profile.profileImage
 
 ```tsx
 function Title({ text }: { text: string }) {
-  return <h3 className='text-lg font-bold  mb-2'>{text}</h3>
+  return <h3 className='text-lg font-bold  mb-2'>{text}</h3>;
 }
-export default Title
+export default Title;
 ```
 
 - components/properties/Description.tsx
 
 ```tsx
-'use client'
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import Title from './Title'
+'use client';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import Title from './Title';
 const Description = ({ description }: { description: string }) => {
-  const [isFullDescriptionShown, setIsFullDescriptionShown] = useState(false)
-  const words = description.split(' ')
-  const isLongDescription = words.length > 100
+  const [isFullDescriptionShown, setIsFullDescriptionShown] = useState(false);
+  const words = description.split(' ');
+  const isLongDescription = words.length > 100;
 
   const toggleDescription = () => {
-    setIsFullDescriptionShown(!isFullDescriptionShown)
-  }
+    setIsFullDescriptionShown(!isFullDescriptionShown);
+  };
 
   const displayedDescription =
     isLongDescription && !isFullDescriptionShown
       ? words.slice(0, 100).join(' ') + '...'
-      : description
+      : description;
 
   return (
     <article className='mt-4'>
@@ -3402,10 +3409,10 @@ const Description = ({ description }: { description: string }) => {
         </Button>
       )}
     </article>
-  )
-}
+  );
+};
 
-export default Description
+export default Description;
 ```
 
 - properties/[id]/page.tsx
@@ -3420,16 +3427,16 @@ export default Description
 - components/properties/Amenities.tsx
 
 ```tsx
-import { Amenity } from '@/utils/amenities'
-import { LuFolderCheck } from 'react-icons/lu'
-import Title from './Title'
+import { Amenity } from '@/utils/amenities';
+import { LuFolderCheck } from 'react-icons/lu';
+import Title from './Title';
 
 function Amenities({ amenities }: { amenities: string }) {
-  const amenitiesList: Amenity[] = JSON.parse(amenities as string)
-  const noAmenities = amenitiesList.every((amenity) => !amenity.selected)
+  const amenitiesList: Amenity[] = JSON.parse(amenities as string);
+  const noAmenities = amenitiesList.every((amenity) => !amenity.selected);
 
   if (noAmenities) {
-    return null
+    return null;
   }
   return (
     <div className='mt-4'>
@@ -3437,7 +3444,7 @@ function Amenities({ amenities }: { amenities: string }) {
       <div className='grid md:grid-cols-2 gap-x-4'>
         {amenitiesList.map((amenity) => {
           if (!amenity.selected) {
-            return null
+            return null;
           }
           return (
             <div key={amenity.name} className='flex items-center gap-x-4 mb-2 '>
@@ -3446,13 +3453,13 @@ function Amenities({ amenities }: { amenities: string }) {
                 {amenity.name}
               </span>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
-export default Amenities
+export default Amenities;
 ```
 
 - properties/[id]/page.tsx
@@ -3463,7 +3470,7 @@ export default Amenities
 
 ### PropertyMap
 
-[﻿React Leaflet](https://react-leaflet.js.org/)
+[React Leaflet](https://react-leaflet.js.org/)
 
 Leaflet makes direct calls to the DOM when it is loaded, therefore React Leaflet is not compatible with server-side rendering.
 
@@ -3478,23 +3485,24 @@ npm install -D @types/leaflet
 - components/properties/PropertyMap.tsx
 
 ```tsx
-'use client'
-import { MapContainer, TileLayer, Marker, ZoomControl } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
-import { icon } from 'leaflet'
-const iconUrl = 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png'
+'use client';
+import { MapContainer, TileLayer, Marker, ZoomControl } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { icon } from 'leaflet';
+const iconUrl =
+  'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png';
 const markerIcon = icon({
   iconUrl: iconUrl,
   iconSize: [20, 30],
-})
+});
 
-import { findCountryByCode } from '@/utils/countries'
-import CountryFlagAndName from '../card/CountryFlagAndName'
-import Title from './Title'
+import { findCountryByCode } from '@/utils/countries';
+import CountryFlagAndName from '../card/CountryFlagAndName';
+import Title from './Title';
 
 function PropertyMap({ countryCode }: { countryCode: string }) {
-  const defaultLocation = [51.505, -0.09] as [number, number]
-  const location = findCountryByCode(countryCode)?.location as [number, number]
+  const defaultLocation = [51.505, -0.09] as [number, number];
+  const location = findCountryByCode(countryCode)?.location as [number, number];
 
   return (
     <div className='mt-4'>
@@ -3520,9 +3528,9 @@ function PropertyMap({ countryCode }: { countryCode: string }) {
         ></Marker>
       </MapContainer>
     </div>
-  )
+  );
 }
-export default PropertyMap
+export default PropertyMap;
 ```
 
 - properties/[id]/page.tsx
@@ -3534,8 +3542,8 @@ const DynamicMap = dynamic(
     ssr: false,
     loading: () => <Skeleton className='h-[400px] w-full' />,
   }
-)
-return <DynamicMap countryCode={property.country} />
+);
+return <DynamicMap countryCode={property.country} />;
 ```
 
 Lazy Loading: Components wrapped with dynamic are lazy loaded. This means that the component code is not loaded until it is needed. For example, if you have a component that is only visible when a user clicks a button, you could use dynamic to ensure that the code for that component is not loaded until the button is clicked.
@@ -3546,13 +3554,2277 @@ Server Side Rendering (SSR) Control: By default, Next.js pre-renders every page.
 
 ```json
 "scripts": {
-  "dev": "next dev",
-  "build": "npx prisma generate && next build",
-  "start": "next start",
-  "lint": "next lint"
-},
+    "dev": "next dev",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
 ```
 
 - refactor NavSearch Component
 
-<!--- Eraser file: https://app.eraser.io/workspace/SUukoDZZGbo0NF0fxbT4 --->
+### Review Model
+
+```prisma
+
+model Review {
+  id        String   @id @default(uuid())
+  profile   Profile  @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profileId String
+  property   Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  propertyId String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Property {
+ reviews Review[]
+}
+model Profile {
+ reviews Review[]
+}
+```
+
+DON'T FORGET !!!!
+
+```sh
+npx prisma db push
+```
+
+- restart server
+
+### Reviews Setup
+
+- create components/reviews
+
+  - Comment.tsx
+  - PropertyReviews.tsx
+  - Rating.tsx
+  - SubmitReview.tsx
+  - ReviewCard.tsx
+
+- create placeholder functions in actions.ts
+
+```ts
+export const createReviewAction = async () => {
+  return { message: 'create review' };
+};
+
+export const fetchPropertyReviews = async () => {
+  return { message: 'fetch reviews' };
+};
+
+export const fetchPropertyReviewsByUser = async () => {
+  return { message: 'fetch user reviews' };
+};
+
+export const deleteReviewAction = async () => {
+  return { message: 'delete  reviews' };
+};
+```
+
+### RatingInput
+
+- components/form/RatingInput.tsx
+
+```tsx
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+const RatingInput = ({
+  name,
+  labelText,
+}: {
+  name: string;
+  labelText?: string;
+}) => {
+  const numbers = Array.from({ length: 5 }, (_, i) => {
+    const value = i + 1;
+    return value.toString();
+  }).reverse();
+
+  return (
+    <div className='mb-2 max-w-xs'>
+      <Label htmlFor={name} className='capitalize'>
+        {labelText || name}
+      </Label>
+      <Select defaultValue={numbers[0]} name={name} required>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {numbers.map((number) => {
+            return (
+              <SelectItem key={number} value={number}>
+                {number}
+              </SelectItem>
+            );
+          })}
+        </SelectContent>
+      </Select>
+    </div>
+  );
+};
+
+export default RatingInput;
+```
+
+### SubmitReview Component
+
+- app/properties/[id]
+
+```tsx
+return (
+  <section>
+    <section></section>
+    {/* after two column section */}
+    <SubmitReview propertyId={property.id} />;
+  </section>
+);
+```
+
+- components/reviews/SubmitReview.tsx
+
+```tsx
+'use client';
+import { useState } from 'react';
+import { SubmitButton } from '@/components/form/Buttons';
+import FormContainer from '@/components/form/FormContainer';
+import { Card } from '@/components/ui/card';
+import RatingInput from '@/components/form/RatingInput';
+import TextAreaInput from '@/components/form/TextAreaInput';
+import { Button } from '@/components/ui/button';
+import { createReviewAction } from '@/utils/actions';
+function SubmitReview({ propertyId }: { propertyId: string }) {
+  const [isReviewFormVisible, setIsReviewFormVisible] = useState(false);
+  return (
+    <div className='mt-8'>
+      <Button onClick={() => setIsReviewFormVisible((prev) => !prev)}>
+        Leave a Review
+      </Button>
+      {isReviewFormVisible && (
+        <Card className='p-8 mt-8'>
+          <FormContainer action={createReviewAction}>
+            <input type='hidden' name='propertyId' value={propertyId} />
+            <RatingInput name='rating' />
+            <TextAreaInput
+              name='comment'
+              labelText='your thoughts on this property'
+              defaultValue='Amazing place !!!'
+            />
+            <SubmitButton text='Submit' className='mt-4' />
+          </FormContainer>
+        </Card>
+      )}
+    </div>
+  );
+}
+
+export default SubmitReview;
+```
+
+- optional : set rows prop in TextArea.tsx
+
+### Submit Review
+
+- utils/schemas.ts
+
+```ts
+export const createReviewSchema = z.object({
+  propertyId: z.string(),
+  rating: z.coerce.number().int().min(1).max(5),
+  comment: z.string().min(10).max(1000),
+});
+```
+
+- action.ts
+
+```ts
+export async function createReviewAction(prevState: any, formData: FormData) {
+  const user = await getAuthUser();
+  try {
+    const rawData = Object.fromEntries(formData);
+
+    const validatedFields = validateWithZodSchema(createReviewSchema, rawData);
+    await db.review.create({
+      data: {
+        ...validatedFields,
+        profileId: user.id,
+      },
+    });
+    revalidatePath(`/properties/${validatedFields.propertyId}`);
+    return { message: 'Review submitted successfully' };
+  } catch (error) {
+    return renderError(error);
+  }
+}
+```
+
+### Fetch Property Reviews
+
+- actions.ts
+
+```ts
+export async function fetchPropertyReviews(propertyId: string) {
+  const reviews = await db.review.findMany({
+    where: {
+      propertyId,
+    },
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      profile: {
+        select: {
+          firstName: true,
+          profileImage: true,
+        },
+      },
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+  return reviews;
+}
+```
+
+### Render Reviews
+
+- app/properties/[id]
+
+```tsx
+return (
+  <>
+    {/* after two column section */}
+    <SubmitReview propertyId={property.id} />
+    <PropertyReviews propertyId={property.id} />
+  </>
+);
+```
+
+- components/reviews/PropertyReviews.tsx
+
+```tsx
+import { fetchPropertyReviews } from '@/utils/actions';
+import Title from '@/components/properties/Title';
+
+import ReviewCard from './ReviewCard';
+async function PropertyReviews({ propertyId }: { propertyId: string }) {
+  const reviews = await fetchPropertyReviews(propertyId);
+  if (reviews.length < 1) return null;
+  return (
+    <div className='mt-8'>
+      <Title text='Reviews' />
+      <div className='grid md:grid-cols-2 gap-8 mt-4 '>
+        {reviews.map((review) => {
+          const { comment, rating } = review;
+          const { firstName, profileImage } = review.profile;
+          const reviewInfo = {
+            comment,
+            rating,
+            name: firstName,
+            image: profileImage,
+          };
+          return <ReviewCard key={review.id} reviewInfo={reviewInfo} />;
+        })}
+      </div>
+    </div>
+  );
+}
+export default PropertyReviews;
+```
+
+### ReviewCard Component
+
+```tsx
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import Rating from './Rating';
+import Comment from './Comment';
+type ReviewCardProps = {
+  reviewInfo: {
+    comment: string;
+    rating: number;
+    name: string;
+    image: string;
+  };
+  children?: React.ReactNode;
+};
+
+function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
+  return (
+    <Card className='relative'>
+      <CardHeader>
+        <div className='flex items-center'>
+          <img
+            src={reviewInfo.image}
+            alt='profile'
+            className='w-12 h-12 rounded-full object-cover'
+          />
+          <div className='ml-4'>
+            <h3 className='text-sm font-bold capitalize mb-1'>
+              {reviewInfo.name}
+            </h3>
+            <Rating rating={reviewInfo.rating} />
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <Comment comment={reviewInfo.comment} />
+      </CardContent>
+      {/* delete button later */}
+      <div className='absolute top-3 right-3'>{children}</div>
+    </Card>
+  );
+}
+export default ReviewCard;
+```
+
+### Rating
+
+```tsx
+import { FaStar, FaRegStar } from 'react-icons/fa';
+
+function Rating({ rating }: { rating: number }) {
+  // rating = 2
+  // 1 <= 2 true
+  // 2 <= 2 true
+  // 3 <= 2 false
+  // ....
+  const stars = Array.from({ length: 5 }, (_, i) => i + 1 <= rating);
+
+  return (
+    <div className='flex items-center gap-x-1'>
+      {stars.map((isFilled, i) => {
+        const className = `w-3 h-3 ${
+          isFilled ? 'text-primary' : 'text-gray-400'
+        }`;
+        return isFilled ? (
+          <FaStar className={className} key={i} />
+        ) : (
+          <FaRegStar className={className} key={i} />
+        );
+      })}
+    </div>
+  );
+}
+
+export default Rating;
+```
+
+### Comment
+
+```tsx
+'use client';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+function Comment({ comment }: { comment: string }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
+  const longComment = comment.length > 130;
+  const displayComment =
+    longComment && !isExpanded ? `${comment.slice(0, 130)}...` : comment;
+
+  return (
+    <div>
+      <p className='text-sm'>{displayComment}</p>
+      {longComment && (
+        <Button
+          variant='link'
+          className='pl-0 text-muted-foreground'
+          onClick={toggleExpanded}
+        >
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </Button>
+      )}
+    </div>
+  );
+}
+
+export default Comment;
+```
+
+### Fetch User's Reviews and Delete Review
+
+```ts
+export const fetchPropertyReviewsByUser = async () => {
+  const user = await getAuthUser();
+  const reviews = await db.review.findMany({
+    where: {
+      profileId: user.id,
+    },
+    select: {
+      id: true,
+      rating: true,
+      comment: true,
+      property: {
+        select: {
+          name: true,
+          image: true,
+        },
+      },
+    },
+  });
+  return reviews;
+};
+
+export const deleteReviewAction = async (prevState: { reviewId: string }) => {
+  const { reviewId } = prevState;
+  const user = await getAuthUser();
+
+  try {
+    await db.review.delete({
+      where: {
+        id: reviewId,
+        profileId: user.id,
+      },
+    });
+
+    revalidatePath('/reviews');
+    return { message: 'Review deleted successfully' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+```
+
+### Icon Button
+
+- components/form/Buttons.tsx
+
+```tsx
+import { LuTrash2, LuPenSquare } from 'react-icons/lu';
+
+type actionType = 'edit' | 'delete';
+export const IconButton = ({ actionType }: { actionType: actionType }) => {
+  const { pending } = useFormStatus();
+
+  const renderIcon = () => {
+    switch (actionType) {
+      case 'edit':
+        return <LuPenSquare />;
+      case 'delete':
+        return <LuTrash2 />;
+      default:
+        const never: never = actionType;
+        throw new Error(`Invalid action type: ${never}`);
+    }
+  };
+
+  return (
+    <Button
+      type='submit'
+      size='icon'
+      variant='link'
+      className='p-2 cursor-pointer'
+    >
+      {pending ? <ReloadIcon className=' animate-spin' /> : renderIcon()}
+    </Button>
+  );
+};
+```
+
+### Reviews Page
+
+- app/reviews/page.tsx
+
+```tsx
+import EmptyList from '@/components/home/EmptyList';
+import {
+  deleteReviewAction,
+  fetchPropertyReviewsByUser,
+} from '@/utils/actions';
+import ReviewCard from '@/components/reviews/ReviewCard';
+import Title from '@/components/properties/Title';
+import FormContainer from '@/components/form/FormContainer';
+import { IconButton } from '@/components/form/Buttons';
+async function ReviewsPage() {
+  const reviews = await fetchPropertyReviewsByUser();
+  if (reviews.length === 0) return <EmptyList />;
+
+  return (
+    <>
+      <Title text='Your Reviews' />
+      <section className='grid md:grid-cols-2 gap-8 mt-4 '>
+        {reviews.map((review) => {
+          const { comment, rating } = review;
+          const { name, image } = review.property;
+          const reviewInfo = {
+            comment,
+            rating,
+            name,
+            image,
+          };
+          return (
+            <ReviewCard key={review.id} reviewInfo={reviewInfo}>
+              <DeleteReview reviewId={review.id} />
+            </ReviewCard>
+          );
+        })}
+      </section>
+    </>
+  );
+}
+
+const DeleteReview = ({ reviewId }: { reviewId: string }) => {
+  const deleteReview = deleteReviewAction.bind(null, { reviewId });
+  return (
+    <FormContainer action={deleteReview}>
+      <IconButton actionType='delete' />
+    </FormContainer>
+  );
+};
+
+export default ReviewsPage;
+```
+
+- loading.tsx
+
+```tsx
+'use client';
+
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+function loading() {
+  return (
+    <section className='grid md:grid-cols-2 gap-8 mt-4 '>
+      <ReviewLoadingCard />
+      <ReviewLoadingCard />
+    </section>
+  );
+}
+
+const ReviewLoadingCard = () => {
+  return (
+    <Card>
+      <CardHeader>
+        <div className='flex items-center'>
+          <Skeleton className='w-12 h-12 rounded-full' />
+          <div className='ml-4'>
+            <Skeleton className='w-[150px] h-4 mb-2' />
+            <Skeleton className='w-[100px] h-4' />
+          </div>
+        </div>
+      </CardHeader>
+    </Card>
+  );
+};
+
+export default loading;
+```
+
+### Allow Review
+
+- actions.ts
+
+```ts
+export const findExistingReview = async (
+  userId: string,
+  propertyId: string
+) => {
+  return db.review.findFirst({
+    where: {
+      profileId: userId,
+      propertyId: propertyId,
+    },
+  });
+};
+```
+
+- app/properties/[id]
+
+```tsx
+import { findExistingReview } from '@/utils/actions';
+import { auth } from '@clerk/nextjs/server';
+
+async function PropertyDetailsPage({ params }: { params: { id: string } }) {
+  const { userId } = auth();
+  const isNotOwner = property.profile.clerkId !== userId;
+  const reviewDoesNotExist =
+    userId && isNotOwner && !(await findExistingReview(userId, property.id));
+
+  return <>{reviewDoesNotExist && <SubmitReview propertyId={property.id} />}</>;
+}
+```
+
+Prisma's findUnique and findFirst methods are used to retrieve a single record from the database, but they have some differences in their behavior:
+
+- findUnique: This method is used when you want to retrieve a single record that matches a unique constraint or a primary key. If no record is found, it returns null.
+
+- findFirst: This method is used when you want to retrieve a single record that matches a non-unique constraint. It can also be used with ordering and filtering. If no record is found, it returns null.
+
+In summary, use findUnique when you're sure the field you're querying by is unique, and use findFirst when you're querying by a non-unique field or need more complex queries with ordering and filtering.
+
+```ts
+const user = await prisma.user.findUnique({
+  where: {
+    email: 'alice@prisma.io',
+  },
+});
+
+const user = await prisma.user.findFirst({
+  where: {
+    email: {
+      contains: 'prisma.io',
+    },
+  },
+  orderBy: {
+    name: 'asc',
+  },
+});
+```
+
+### PropertyRating - Complete
+
+- actions
+
+```ts
+export async function fetchPropertyRating(propertyId: string) {
+  const result = await db.review.groupBy({
+    by: ['propertyId'],
+    _avg: {
+      rating: true,
+    },
+    _count: {
+      rating: true,
+    },
+    where: {
+      propertyId,
+    },
+  });
+
+  // empty array if no reviews
+  return {
+    rating: result[0]?._avg.rating?.toFixed(1) ?? 0,
+    count: result[0]?._count.rating ?? 0,
+  };
+}
+```
+
+- components/card/PropertyRating.tsx
+
+```tsx
+import { fetchPropertyRating } from '@/utils/actions';
+import { FaStar } from 'react-icons/fa';
+
+async function PropertyRating({
+  propertyId,
+  inPage,
+}: {
+  propertyId: string;
+  inPage: boolean;
+}) {
+  const { rating, count } = await fetchPropertyRating(propertyId);
+  if (count === 0) return null;
+  const className = `flex gap-1 items-center ${inPage ? 'text-md' : 'text-xs'}`;
+  const countText = count === 1 ? 'review' : 'reviews';
+  const countValue = `(${count}) ${inPage ? countText : ''}`;
+  return (
+    <span className={className}>
+      <FaStar className='w-3 h-3' />
+      {rating} {countValue}
+    </span>
+  );
+}
+
+export default PropertyRating;
+```
+
+### Booking Model
+
+- schema.prisma
+
+```prisma
+model Booking {
+  id        String   @id @default(uuid())
+  profile   Profile  @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profileId String
+  property   Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  propertyId String
+  orderTotal     Int
+  totalNights    Int
+  checkIn   DateTime
+  checkOut  DateTime
+  paymentStatus Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  bookings Booking[]
+}
+model Property {
+  bookings Booking[]
+}
+
+```
+
+```bash
+npx prisma db push
+```
+
+- restart server !!!
+
+### Fetch Bookings
+
+- actions.ts
+
+```ts
+export const fetchPropertyDetails = (id: string) => {
+  return db.property.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      profile: true,
+      bookings: {
+        select: {
+          checkIn: true,
+          checkOut: true,
+        },
+      },
+    },
+  });
+};
+```
+
+### Booking Types
+
+- utils/types.ts
+
+```ts
+export type DateRangeSelect = {
+  startDate: Date;
+  endDate: Date;
+  key: string;
+};
+
+export type Booking = {
+  checkIn: Date;
+  checkOut: Date;
+};
+```
+
+### Booking Components
+
+- remove @/components/properties/BookingCalendar.tsx
+
+- create @/components/booking
+  - BookingCalendar.tsx
+  - BookingContainer.tsx
+  - BookingForm.tsx
+  - BookingWrapper.tsx
+  - ConfirmBooking.tsx
+
+### Zustand
+
+[Docs](https://docs.pmnd.rs/zustand/getting-started/introduction)
+
+```sh
+npm install zustand
+```
+
+### Setup Store
+
+- utils/store.ts
+
+```ts
+import { create } from 'zustand';
+import { Booking } from './types';
+import { DateRange } from 'react-day-picker';
+// Define the state's shape
+type PropertyState = {
+  propertyId: string;
+  price: number;
+  bookings: Booking[];
+  range: DateRange | undefined;
+};
+
+// Create the store
+export const useProperty = create<PropertyState>(() => {
+  return {
+    propertyId: '',
+    price: 0,
+    bookings: [],
+    range: undefined,
+  };
+});
+```
+
+### BookingWrapper
+
+```tsx
+'use client';
+
+import { useProperty } from '@/utils/store';
+import { Booking } from '@/utils/types';
+import BookingCalendar from './BookingCalendar';
+import BookingContainer from './BookingContainer';
+import { useEffect } from 'react';
+
+type BookingWrapperProps = {
+  propertyId: string;
+  price: number;
+  bookings: Booking[];
+};
+export default function BookingWrapper({
+  propertyId,
+  price,
+  bookings,
+}: BookingWrapperProps) {
+  useEffect(() => {
+    useProperty.setState({
+      propertyId,
+      price,
+      bookings,
+    });
+  }, []);
+  return (
+    <>
+      <BookingCalendar />
+      <BookingContainer />
+    </>
+  );
+}
+```
+
+- properties/[id]/page.tsx
+
+```tsx
+const DynamicBookingWrapper = dynamic(
+  () => import('@/components/booking/BookingWrapper'),
+  {
+    ssr: false,
+    loading: () => <Skeleton className='h-[200px] w-full' />,
+  }
+);
+
+return (
+  <div className='lg:col-span-4 flex flex-col items-center'>
+    {/* calendar */}
+    <DynamicBookingWrapper
+      propertyId={property.id}
+      price={property.price}
+      bookings={property.bookings}
+    />
+  </div>
+);
+```
+
+### Helper Functions
+
+- utils/calendar.ts
+
+```ts
+import { DateRange } from 'react-day-picker';
+import { Booking } from '@/utils/types';
+
+export const defaultSelected: DateRange = {
+  from: undefined,
+  to: undefined,
+};
+
+export const generateBlockedPeriods = ({
+  bookings,
+  today,
+}: {
+  bookings: Booking[];
+  today: Date;
+}) => {
+  today.setHours(0, 0, 0, 0); // Set the time to 00:00:00.000
+
+  const disabledDays: DateRange[] = [
+    ...bookings.map((booking) => ({
+      from: booking.checkIn,
+      to: booking.checkOut,
+    })),
+    {
+      from: new Date(0), // This is 01 January 1970 00:00:00 UTC.
+      to: new Date(today.getTime() - 24 * 60 * 60 * 1000), // This is yesterday.
+    },
+  ];
+  return disabledDays;
+};
+
+export const generateDateRange = (range: DateRange | undefined): string[] => {
+  if (!range || !range.from || !range.to) return [];
+
+  let currentDate = new Date(range.from);
+  const endDate = new Date(range.to);
+  const dateRange: string[] = [];
+
+  while (currentDate <= endDate) {
+    const dateString = currentDate.toISOString().split('T')[0];
+    dateRange.push(dateString);
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  return dateRange;
+};
+
+export const generateDisabledDates = (
+  disabledDays: DateRange[]
+): { [key: string]: boolean } => {
+  if (disabledDays.length === 0) return {};
+
+  const disabledDates: { [key: string]: boolean } = {};
+
+  disabledDays.forEach((range) => {
+    if (!range.from || !range.to) return;
+
+    let currentDate = new Date(range.from);
+    const endDate = new Date(range.to);
+
+    while (currentDate <= endDate) {
+      const dateString = currentDate.toISOString().split('T')[0];
+      disabledDates[dateString] = true;
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  });
+
+  return disabledDates;
+};
+
+export function calculateDaysBetween({
+  checkIn,
+  checkOut,
+}: {
+  checkIn: Date;
+  checkOut: Date;
+}) {
+  // Calculate the difference in milliseconds
+  const diffInMs = Math.abs(checkOut.getTime() - checkIn.getTime());
+
+  // Convert the difference in milliseconds to days
+  const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+
+  return diffInDays;
+}
+```
+
+### BoookingCalendar
+
+```tsx
+'use client';
+import { Calendar } from '@/components/ui/calendar';
+import { useEffect, useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
+import { DateRange } from 'react-day-picker';
+import { useProperty } from '@/utils/store';
+
+import {
+  generateDisabledDates,
+  generateDateRange,
+  defaultSelected,
+  generateBlockedPeriods,
+} from '@/utils/calendar';
+
+function BookingCalendar() {
+  const currentDate = new Date();
+
+  const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
+
+  useEffect(() => {
+    useProperty.setState({ range });
+  }, [range]);
+
+  return (
+    <Calendar
+      mode='range'
+      defaultMonth={currentDate}
+      selected={range}
+      onSelect={setRange}
+      className='mb-4'
+    />
+  );
+}
+export default BookingCalendar;
+```
+
+### BookingContainer
+
+```tsx
+'use client';
+
+import { useProperty } from '@/utils/store';
+import ConfirmBooking from './ConfirmBooking';
+import BookingForm from './BookingForm';
+function BookingContainer() {
+  const { range } = useProperty((state) => state);
+
+  if (!range || !range.from || !range.to) return null;
+  if (range.to.getTime() === range.from.getTime()) return null;
+  return (
+    <div className='w-full'>
+      <BookingForm />
+      <ConfirmBooking />
+    </div>
+  );
+}
+
+export default BookingContainer;
+```
+
+### CalculateTotals
+
+- utils/calculateTotals.ts
+
+```ts
+import { calculateDaysBetween } from '@/utils/calendar';
+
+type BookingDetails = {
+  checkIn: Date;
+  checkOut: Date;
+  price: number;
+};
+
+export const calculateTotals = ({
+  checkIn,
+  checkOut,
+  price,
+}: BookingDetails) => {
+  const totalNights = calculateDaysBetween({ checkIn, checkOut });
+  const subTotal = totalNights * price;
+  const cleaning = 21;
+  const service = 40;
+  const tax = subTotal * 0.1;
+  const orderTotal = subTotal + cleaning + service + tax;
+  return { totalNights, subTotal, cleaning, service, tax, orderTotal };
+};
+```
+
+### BookingForm
+
+```tsx
+import { calculateTotals } from '@/utils/calculateTotals';
+import { Card, CardTitle } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { useProperty } from '@/utils/store';
+import { formatCurrency } from '@/utils/format';
+function BookingForm() {
+  const { range, price } = useProperty((state) => state);
+  const checkIn = range?.from as Date;
+  const checkOut = range?.to as Date;
+
+  const { totalNights, subTotal, cleaning, service, tax, orderTotal } =
+    calculateTotals({
+      checkIn,
+      checkOut,
+      price,
+    });
+  return (
+    <Card className='p-8 mb-4'>
+      <CardTitle className='mb-8'>Summary </CardTitle>
+      <FormRow label={`$${price} x ${totalNights} nights`} amount={subTotal} />
+      <FormRow label='Cleaning Fee' amount={cleaning} />
+      <FormRow label='Service Fee' amount={service} />
+      <FormRow label='Tax' amount={tax} />
+      <Separator className='mt-4' />
+      <CardTitle className='mt-8'>
+        <FormRow label='Booking Total' amount={orderTotal} />
+      </CardTitle>
+    </Card>
+  );
+}
+
+function FormRow({ label, amount }: { label: string; amount: number }) {
+  return (
+    <p className='flex justify-between text-sm mb-2'>
+      <span>{label}</span>
+      <span>{formatCurrency(amount)}</span>
+    </p>
+  );
+}
+
+export default BookingForm;
+```
+
+### ConfirmBooking
+
+- action.ts
+
+```ts
+export const createBookingAction = async () => {
+  return { message: 'create booking' };
+};
+```
+
+```tsx
+'use client';
+import { SignInButton, useAuth } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
+import { useProperty } from '@/utils/store';
+import FormContainer from '@/components/form/FormContainer';
+import { SubmitButton } from '@/components/form/Buttons';
+import { createBookingAction } from '@/utils/actions';
+
+function ConfirmBooking() {
+  const { userId } = useAuth();
+  const { propertyId, range } = useProperty((state) => state);
+  const checkIn = range?.from as Date;
+  const checkOut = range?.to as Date;
+  if (!userId)
+    return (
+      <SignInButton mode='modal'>
+        <Button type='button' className='w-full'>
+          Sign In to Complete Booking
+        </Button>
+      </SignInButton>
+    );
+
+  const createBooking = createBookingAction.bind(null, {
+    propertyId,
+    checkIn,
+    checkOut,
+  });
+  return (
+    <section>
+      <FormContainer action={createBooking}>
+        <SubmitButton text='Reserve' className='w-full' />
+      </FormContainer>
+    </section>
+  );
+}
+export default ConfirmBooking;
+```
+
+### CreateBookingAction
+
+```tsx
+export const createBookingAction = async (prevState: {
+  propertyId: string;
+  checkIn: Date;
+  checkOut: Date;
+}) => {
+  const user = await getAuthUser();
+
+  const { propertyId, checkIn, checkOut } = prevState;
+  const property = await db.property.findUnique({
+    where: { id: propertyId },
+    select: { price: true },
+  });
+  if (!property) {
+    return { message: 'Property not found' };
+  }
+  const { orderTotal, totalNights } = calculateTotals({
+    checkIn,
+    checkOut,
+    price: property.price,
+  });
+
+  try {
+    const booking = await db.booking.create({
+      data: {
+        checkIn,
+        checkOut,
+        orderTotal,
+        totalNights,
+        profileId: user.id,
+        propertyId,
+      },
+    });
+  } catch (error) {
+    return renderError(error);
+  }
+  redirect('/bookings');
+};
+```
+
+### Blocked Periods/Dates
+
+BookingCalendar.tsx
+
+```tsx
+function BookingCalendar() {
+  const bookings = useProperty((state) => state.bookings);
+  const blockedPeriods = generateBlockedPeriods({
+    bookings,
+    today: currentDate,
+  });
+
+  return (
+    <Calendar
+      mode='range'
+      defaultMonth={currentDate}
+      selected={range}
+      onSelect={setRange}
+      className='mb-4'
+      // add disabled
+      disabled={blockedPeriods}
+    />
+  );
+}
+export default BookingCalendar;
+```
+
+### Unavailable Dates
+
+BookingCalendar.tsx
+
+```tsx
+
+unction BookingCalendar() {
+
+  const { toast } = useToast();
+  const unavailableDates = generateDisabledDates(blockedPeriods);
+
+  useEffect(() => {
+    const selectedRange = generateDateRange(range);
+    const isDisabledDateIncluded = selectedRange.some((date) => {
+      if (unavailableDates[date]) {
+        setRange(defaultSelected);
+        toast({
+          description: 'Some dates are booked. Please select again.',
+        });
+        return true;
+      }
+      return false;
+    });
+    useProperty.setState({ range });
+  }, [range]);
+
+
+  return (
+    <Calendar
+      mode='range'
+      defaultMonth={currentDate}
+      selected={range}
+      onSelect={setRange}
+      className='mb-4'
+      // add disabled
+      disabled={blockedPeriods}
+    />
+  );
+}
+export default BookingCalendar;
+
+
+```
+
+### Fetch Bookings and Delete Booking
+
+- actions.ts
+
+```ts
+export const fetchBookings = async () => {
+  const user = await getAuthUser();
+  const bookings = await db.booking.findMany({
+    where: {
+      profileId: user.id,
+    },
+    include: {
+      property: {
+        select: {
+          id: true,
+          name: true,
+          country: true,
+        },
+      },
+    },
+    orderBy: {
+      checkIn: 'desc',
+    },
+  });
+  return bookings;
+};
+
+export async function deleteBookingAction(prevState: { bookingId: string }) {
+  const { bookingId } = prevState;
+  const user = await getAuthUser();
+
+  try {
+    const result = await db.booking.delete({
+      where: {
+        id: bookingId,
+        profileId: user.id,
+      },
+    });
+
+    revalidatePath('/bookings');
+    return { message: 'Booking deleted successfully' };
+  } catch (error) {
+    return renderError(error);
+  }
+}
+```
+
+### Bookings Page
+
+- utils/format.ts
+
+```ts
+export const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+};
+```
+
+Bookings.tsx
+
+```tsx
+import EmptyList from '@/components/home/EmptyList';
+import CountryFlagAndName from '@/components/card/CountryFlagAndName';
+import Link from 'next/link';
+
+import { formatDate, formatCurrency } from '@/utils/format';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
+import FormContainer from '@/components/form/FormContainer';
+import { IconButton } from '@/components/form/Buttons';
+import { fetchBookings, deleteBookingAction } from '@/utils/actions';
+
+async function BookingsPage() {
+  const bookings = await fetchBookings();
+  if (bookings.length === 0) {
+    return <EmptyList />;
+  }
+  return (
+    <div className='mt-16'>
+      <h4 className='mb-4 capitalize'>total bookings : {bookings.length}</h4>
+      <Table>
+        <TableCaption>A list of your recent bookings.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Property Name</TableHead>
+            <TableHead>Country</TableHead>
+            <TableHead>Nights</TableHead>
+            <TableHead>Total</TableHead>
+            <TableHead>Check In</TableHead>
+            <TableHead>Check Out</TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {bookings.map((booking) => {
+            const { id, orderTotal, totalNights, checkIn, checkOut } = booking;
+            const { id: propertyId, name, country } = booking.property;
+            const startDate = formatDate(checkIn);
+            const endDate = formatDate(checkOut);
+            return (
+              <TableRow key={id}>
+                <TableCell>
+                  <Link
+                    href={`/properties/${propertyId}`}
+                    className='underline text-muted-foreground tracking-wide'
+                  >
+                    {name}
+                  </Link>
+                </TableCell>
+                <TableCell>
+                  <CountryFlagAndName countryCode={country} />
+                </TableCell>
+                <TableCell>{totalNights}</TableCell>
+                <TableCell>{formatCurrency(orderTotal)}</TableCell>
+                <TableCell>{startDate}</TableCell>
+                <TableCell>{endDate}</TableCell>
+                <TableCell>
+                  <DeleteBooking bookingId={id} />
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+function DeleteBooking({ bookingId }: { bookingId: string }) {
+  const deleteBooking = deleteBookingAction.bind(null, { bookingId });
+  return (
+    <FormContainer action={deleteBooking}>
+      <IconButton actionType='delete' />
+    </FormContainer>
+  );
+}
+
+export default BookingsPage;
+```
+
+### LoadingTable
+
+- create @/components/booking/LoadingTable.tsx
+
+```tsx
+import { Skeleton } from '../ui/skeleton';
+
+function LoadingTable({ rows }: { rows?: number }) {
+  const tableRows = Array.from({ length: rows || 5 }, (_, i) => {
+    return (
+      <div className='mb-4' key={i}>
+        <Skeleton className='w-full h-8 rounded' />
+      </div>
+    );
+  });
+  return <>{tableRows}</>;
+}
+export default LoadingTable;
+```
+
+- create app/bookings/loading.tsx
+
+```tsx
+'use client';
+
+import LoadingTable from '@/components/booking/LoadingTable';
+
+function loading() {
+  return <LoadingTable />;
+}
+
+export default loading;
+```
+
+### Fetch and Delete Rentals
+
+- actions.ts
+
+```ts
+export const fetchRentals = async () => {
+  const user = await getAuthUser();
+  const rentals = await db.property.findMany({
+    where: {
+      profileId: user.id,
+    },
+    select: {
+      id: true,
+      name: true,
+      price: true,
+    },
+  });
+
+  const rentalsWithBookingSums = await Promise.all(
+    rentals.map(async (rental) => {
+      const totalNightsSum = await db.booking.aggregate({
+        where: {
+          propertyId: rental.id,
+        },
+        _sum: {
+          totalNights: true,
+        },
+      });
+
+      const orderTotalSum = await db.booking.aggregate({
+        where: {
+          propertyId: rental.id,
+        },
+        _sum: {
+          orderTotal: true,
+        },
+      });
+
+      return {
+        ...rental,
+        totalNightsSum: totalNightsSum._sum.totalNights,
+        orderTotalSum: orderTotalSum._sum.orderTotal,
+      };
+    })
+  );
+
+  return rentalsWithBookingSums;
+};
+
+export async function deleteRentalAction(prevState: { propertyId: string }) {
+  const { propertyId } = prevState;
+  const user = await getAuthUser();
+
+  try {
+    await db.property.delete({
+      where: {
+        id: propertyId,
+        profileId: user.id,
+      },
+    });
+
+    revalidatePath('/rentals');
+    return { message: 'Rental deleted successfully' };
+  } catch (error) {
+    return renderError(error);
+  }
+}
+```
+
+### Rentals Page
+
+- create rentals/loading.tsx
+
+```tsx
+'use client';
+import LoadingTable from '@/components/booking/LoadingTable';
+function loading() {
+  return <LoadingTable />;
+}
+export default loading;
+```
+
+```tsx
+import EmptyList from '@/components/home/EmptyList';
+import { fetchRentals, deleteRentalAction } from '@/utils/actions';
+import Link from 'next/link';
+
+import { formatCurrency } from '@/utils/format';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
+import FormContainer from '@/components/form/FormContainer';
+import { IconButton } from '@/components/form/Buttons';
+
+async function RentalsPage() {
+  const rentals = await fetchRentals();
+
+  if (rentals.length === 0) {
+    return (
+      <EmptyList
+        heading='No rentals to display.'
+        message="Don't hesitate to create a rental."
+      />
+    );
+  }
+
+  return (
+    <div className='mt-16'>
+      <h4 className='mb-4 capitalize'>Active Properties : {rentals.length}</h4>
+      <Table>
+        <TableCaption>A list of all your properties.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Property Name</TableHead>
+            <TableHead>Nightly Rate </TableHead>
+            <TableHead>Nights Booked</TableHead>
+            <TableHead>Total Income</TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rentals.map((rental) => {
+            const { id: propertyId, name, price } = rental;
+            const { totalNightsSum, orderTotalSum } = rental;
+            return (
+              <TableRow key={propertyId}>
+                <TableCell>
+                  <Link
+                    href={`/properties/${propertyId}`}
+                    className='underline text-muted-foreground tracking-wide'
+                  >
+                    {name}
+                  </Link>
+                </TableCell>
+                <TableCell>{formatCurrency(price)}</TableCell>
+                <TableCell>{totalNightsSum || 0}</TableCell>
+                <TableCell>{formatCurrency(orderTotalSum)}</TableCell>
+
+                <TableCell className='flex items-center gap-x-2'>
+                  <Link href={`/rentals/${propertyId}/edit`}>
+                    <IconButton actionType='edit'></IconButton>
+                  </Link>
+                  <DeleteRental propertyId={propertyId} />
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+function DeleteRental({ propertyId }: { propertyId: string }) {
+  const deleteRental = deleteRentalAction.bind(null, { propertyId });
+  return (
+    <FormContainer action={deleteRental}>
+      <IconButton actionType='delete' />
+    </FormContainer>
+  );
+}
+
+export default RentalsPage;
+```
+
+### Fetch Rental Details
+
+- actions.ts
+
+```ts
+export const fetchRentalDetails = async (propertyId: string) => {
+  const user = await getAuthUser();
+
+  return db.property.findUnique({
+    where: {
+      id: propertyId,
+      profileId: user.id,
+    },
+  });
+};
+
+export const updatePropertyAction = async () => {
+  return { message: 'update property action' };
+};
+
+export const updatePropertyImageAction = async () => {
+  return { message: 'update property image' };
+};
+```
+
+### Rentals Edit Page
+
+- rentals/[id]/edit/page.tsx
+
+```tsx
+import {
+  fetchRentalDetails,
+  updatePropertyImageAction,
+  updatePropertyAction,
+} from '@/utils/actions';
+import FormContainer from '@/components/form/FormContainer';
+import FormInput from '@/components/form/FormInput';
+import CategoriesInput from '@/components/form/CategoriesInput';
+import PriceInput from '@/components/form/PriceInput';
+import TextAreaInput from '@/components/form/TextAreaInput';
+import CountriesInput from '@/components/form/CountriesInput';
+import CounterInput from '@/components/form/CounterInput';
+import AmenitiesInput from '@/components/form/AmenitiesInput';
+import { SubmitButton } from '@/components/form/Buttons';
+import { redirect } from 'next/navigation';
+import { type Amenity } from '@/utils/amenities';
+import ImageInputContainer from '@/components/form/ImageInputContainer';
+
+async function EditRentalPage({ params }: { params: { id: string } }) {
+  const property = await fetchRentalDetails(params.id);
+
+  if (!property) redirect('/');
+
+  const defaultAmenities: Amenity[] = JSON.parse(property.amenities);
+
+  return (
+    <section>
+      <h1 className='text-2xl font-semibold mb-8 capitalize'>Edit Property</h1>
+      <div className='border p-8 rounded-md '>
+        <ImageInputContainer
+          name={property.name}
+          text='Update Image'
+          action={updatePropertyImageAction}
+          image={property.image}
+        >
+          <input type='hidden' name='id' value={property.id} />
+        </ImageInputContainer>
+
+        <FormContainer action={updatePropertyAction}>
+          <input type='hidden' name='id' value={property.id} />
+          <div className='grid md:grid-cols-2 gap-8 mb-4 mt-8'>
+            <FormInput
+              name='name'
+              type='text'
+              label='Name (20 limit)'
+              defaultValue={property.name}
+            />
+            <FormInput
+              name='tagline'
+              type='text '
+              label='Tagline (30 limit)'
+              defaultValue={property.tagline}
+            />
+            <PriceInput defaultValue={property.price} />
+            <CategoriesInput defaultValue={property.category} />
+            <CountriesInput defaultValue={property.country} />
+          </div>
+
+          <TextAreaInput
+            name='description'
+            labelText='Description (10 - 100 Words)'
+            defaultValue={property.description}
+          />
+
+          <h3 className='text-lg mt-8 mb-4 font-medium'>
+            Accommodation Details
+          </h3>
+          <CounterInput detail='guests' defaultValue={property.guests} />
+          <CounterInput detail='bedrooms' defaultValue={property.bedrooms} />
+          <CounterInput detail='beds' defaultValue={property.beds} />
+          <CounterInput detail='baths' defaultValue={property.baths} />
+          <h3 className='text-lg mt-10 mb-6 font-medium'>Amenities</h3>
+          <AmenitiesInput defaultValue={defaultAmenities} />
+          <SubmitButton text='edit property' className='mt-12' />
+        </FormContainer>
+      </div>
+    </section>
+  );
+}
+export default EditRentalPage;
+```
+
+### Amenities Input
+
+```tsx
+'use client';
+import { useState } from 'react';
+import { amenities, Amenity } from '@/utils/amenities';
+import { Checkbox } from '@/components/ui/checkbox';
+
+function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
+  const amenitiesWithIcons = defaultValue?.map(({ name, selected }) => ({
+    name,
+    selected,
+    icon: amenities.find((amenity) => amenity.name === name)!.icon,
+  }));
+  const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(
+    amenitiesWithIcons || amenities
+  );
+  const handleChange = (amenity: Amenity) => {
+    setSelectedAmenities((prev) => {
+      return prev.map((a) => {
+        if (a.name === amenity.name) {
+          return { ...a, selected: !a.selected };
+        }
+        return a;
+      });
+    });
+  };
+
+  return (
+    <section>
+      <input
+        type='hidden'
+        name='amenities'
+        value={JSON.stringify(selectedAmenities)}
+      />
+      <div className='grid grid-cols-2 gap-4'>
+        {selectedAmenities.map((amenity) => {
+          return (
+            <div key={amenity.name} className='flex items-center space-x-2'>
+              <Checkbox
+                id={amenity.name}
+                checked={amenity.selected}
+                onCheckedChange={() => handleChange(amenity)}
+              />
+              <label
+                htmlFor={amenity.name}
+                className='text-sm font-medium leading-none capitalize flex gap-x-2 items-center'
+              >
+                {amenity.name} <amenity.icon className='w-4 h-4' />
+              </label>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+export default AmenitiesInput;
+```
+
+### Update Property Action
+
+```ts
+export const updatePropertyAction = async (
+  prevState: any,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const user = await getAuthUser();
+  const propertyId = formData.get('id') as string;
+
+  try {
+    const rawData = Object.fromEntries(formData);
+    const validatedFields = validateWithZodSchema(propertySchema, rawData);
+    await db.property.update({
+      where: {
+        id: propertyId,
+        profileId: user.id,
+      },
+      data: {
+        ...validatedFields,
+      },
+    });
+
+    revalidatePath(`/rentals/${propertyId}/edit`);
+    return { message: 'Update Successful' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+```
+
+### Update Property Image Action
+
+```ts
+export const updatePropertyImageAction = async (
+  prevState: any,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const user = await getAuthUser();
+  const propertyId = formData.get('id') as string;
+
+  try {
+    const image = formData.get('image') as File;
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
+    const fullPath = await uploadImage(validatedFields.image);
+
+    await db.property.update({
+      where: {
+        id: propertyId,
+        profileId: user.id,
+      },
+      data: {
+        image: fullPath,
+      },
+    });
+    revalidatePath(`/rentals/${propertyId}/edit`);
+    return { message: 'Property Image Updated Successful' };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+```
+
+### Reservations
+
+- in app/reservations create page.tsx and loading.tsx
+
+```tsx
+'use client';
+
+import LoadingTable from '@/components/booking/LoadingTable';
+
+function loading() {
+  return <LoadingTable />;
+}
+export default loading;
+```
+
+- add to links
+
+utils/links.ts
+
+```ts
+export const links: NavLink[] = [
+  { href: '/', label: 'home' },
+  { href: '/favorites ', label: 'favorites' },
+  { href: '/bookings ', label: 'bookings' },
+  { href: '/reviews ', label: 'reviews' },
+  { href: '/reservations ', label: 'reservations' },
+  { href: '/rentals/create ', label: 'create rental' },
+  { href: '/rentals', label: 'my rentals' },
+  { href: '/profile ', label: 'profile' },
+];
+```
+
+### Fetch Reservations
+
+```ts
+export const fetchReservations = async () => {
+  const user = await getAuthUser();
+
+  const reservations = await db.booking.findMany({
+    where: {
+      property: {
+        profileId: user.id,
+      },
+    },
+
+    orderBy: {
+      createdAt: 'desc', // or 'asc' for ascending order
+    },
+
+    include: {
+      property: {
+        select: {
+          id: true,
+          name: true,
+          price: true,
+          country: true,
+        },
+      }, // include property details in the result
+    },
+  });
+  return reservations;
+};
+```
+
+### Reservations Page
+
+```tsx
+import { fetchReservations } from '@/utils/actions';
+import Link from 'next/link';
+import EmptyList from '@/components/home/EmptyList';
+import CountryFlagAndName from '@/components/card/CountryFlagAndName';
+
+import { formatDate, formatCurrency } from '@/utils/format';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
+async function ReservationsPage() {
+  const reservations = await fetchReservations();
+
+  if (reservations.length === 0) {
+    return <EmptyList />;
+  }
+
+  return (
+    <div className='mt-16'>
+      <h4 className='mb-4 capitalize'>
+        total reservations : {reservations.length}
+      </h4>
+      <Table>
+        <TableCaption>A list of your recent reservations.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Property Name</TableHead>
+            <TableHead>Country</TableHead>
+            <TableHead>Nights</TableHead>
+            <TableHead>Total</TableHead>
+            <TableHead>Check In</TableHead>
+            <TableHead>Check Out</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {reservations.map((item) => {
+            const { id, orderTotal, totalNights, checkIn, checkOut } = item;
+            const { id: propertyId, name, country } = item.property;
+            const startDate = formatDate(checkIn);
+            const endDate = formatDate(checkOut);
+            return (
+              <TableRow key={id}>
+                <TableCell>
+                  <Link
+                    href={`/properties/${propertyId}`}
+                    className='underline text-muted-foreground tracking-wide'
+                  >
+                    {name}
+                  </Link>
+                </TableCell>
+                <TableCell>
+                  <CountryFlagAndName countryCode={country} />
+                </TableCell>
+                <TableCell>{totalNights}</TableCell>
+                <TableCell>{formatCurrency(orderTotal)}</TableCell>
+                <TableCell>{startDate}</TableCell>
+                <TableCell>{endDate}</TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+export default ReservationsPage;
+```
+
+### Admin User - Setup
+
+- create app/admin/page.tsx
+- add admin to links
+- create components/admin
+  - Chart.tsx
+  - ChartsContainer.tsx
+  - Loading.tsx
+  - StatsCard.tsx
+  - StatsContainer.tsx
+
+### Admin User - Middleware
+
+- refactor middleware
+- create ENV variable with userId
+- add to VERCEL
+
+```ts
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+
+import { NextResponse } from 'next/server';
+
+const isPublicRoute = createRouteMatcher(['/', '/properties(.*)']);
+
+const isAdminRoute = createRouteMatcher(['/admin(.*)']);
+export default clerkMiddleware(async (auth, req) => {
+  const isAdminUser = auth().userId === process.env.ADMIN_USER_ID;
+  if (isAdminRoute(req) && !isAdminUser) {
+    return NextResponse.redirect(new URL('/', req.url));
+  }
+  if (!isPublicRoute(req)) auth().protect();
+});
+
+export const config = {
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
+};
+```
+
+### Admin User - LinksDropdown
+
+- LinksDropdown.tsx
+
+```tsx
+import { auth } from '@clerk/nextjs/server';
+
+function LinksDropdown() {
+  const { userId } = auth();
+  const isAdminUser = userId === process.env.ADMIN_USER_ID;
+}
+return (
+  <>
+    {links.map((link) => {
+      if (link.label === 'admin' && !isAdminUser) return null;
+      return (
+        <DropdownMenuItem key={link.href}>
+          <Link href={link.href} className='capitalize w-full'>
+            {link.label}
+          </Link>
+        </DropdownMenuItem>
+      );
+    })}
+  </>
+);
+```
+
+### Admin User - Loading
+
+```tsx
+import { Card, CardHeader } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+
+export function StatsLoadingContainer() {
+  return (
+    <div className='mt-8 grid md:grid-cols-2 gap-4 lg:grid-cols-3'>
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+    </div>
+  );
+}
+
+function LoadingCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <Skeleton className='w-full h-20 rounded' />
+      </CardHeader>
+    </Card>
+  );
+}
+
+export function ChartsLoadingContainer() {
+  return <Skeleton className='mt-16 w-full h-[300px] rounded' />;
+}
+```
+
+### Admin User - Main Page
+
+```tsx
+import ChartsContainer from '@/components/admin/ChartsContainer';
+import StatsContainer from '@/components/admin/StatsContainer';
+import {
+  ChartsLoadingContainer,
+  StatsLoadingContainer,
+} from '@/components/admin/Loading';
+import { Suspense } from 'react';
+async function AdminPage() {
+  return (
+    <>
+      <Suspense fallback={<StatsLoadingContainer />}>
+        <StatsContainer />
+      </Suspense>
+      <Suspense fallback={<ChartsLoadingContainer />}>
+        <ChartsContainer />
+      </Suspense>
+    </>
+  );
+}
+export default AdminPage;
+```
+
+### Admin User - Fetch Stats
+
+```ts
+const getAdminUser = async () => {
+  const user = await getAuthUser();
+  if (user.id !== process.env.ADMIN_USER_ID) redirect('/');
+  return user;
+};
+
+export const fetchStats = async () => {
+  await getAdminUser();
+
+  const usersCount = await db.profile.count();
+  const propertiesCount = await db.property.count();
+  const bookingsCount = await db.booking.count();
+
+  return {
+    usersCount,
+    propertiesCount,
+    bookingsCount,
+  };
+};
+```
+
+### Admin User - StatsContainer
+
+```tsx
+import { fetchStats } from '@/utils/actions';
+import StatsCard from './StatsCard';
+async function StatsContainer() {
+  const data = await fetchStats();
+
+  return (
+    <div className='mt-8 grid md:grid-cols-2 gap-4 lg:grid-cols-3'>
+      <StatsCard title='users' value={data?.usersCount || 0} />
+      <StatsCard title='properties' value={data?.propertiesCount || 0} />
+      <StatsCard title='bookings' value={data?.bookingsCount || 0} />
+    </div>
+  );
+}
+export default StatsContainer;
+```
+
+### Admin User - StatsCard
+
+```tsx
+import { Card, CardHeader } from '@/components/ui/card';
+
+type StatsCardsProps = {
+  title: string;
+  value: number;
+};
+
+function StatsCards({ title, value }: StatsCardsProps) {
+  return (
+    <Card className='bg-muted'>
+      <CardHeader className='flex flex-row justify-between items-center'>
+        <h3 className='capitalize text-3xl font-bold'>{title}</h3>
+        <span className='text-primary text-5xl font-extrabold'>{value}</span>
+      </CardHeader>
+    </Card>
+  );
+}
+
+export default StatsCards;
+```
+
+### Admin User - Fetch Charts Data
+
+```ts
+export const fetchChartsData = async () => {
+  await getAdminUser();
+  const date = new Date();
+  date.setMonth(date.getMonth() - 6);
+  const sixMonthsAgo = date;
+
+  const bookings = await db.booking.findMany({
+    where: {
+      createdAt: {
+        gte: sixMonthsAgo,
+      },
+    },
+    orderBy: {
+      createdAt: 'asc',
+    },
+  });
+  let bookingsPerMonth = bookings.reduce((total, current) => {
+    const date = formatDate(current.createdAt, true);
+
+    const existingEntry = total.find((entry) => entry.date === date);
+    if (existingEntry) {
+      existingEntry.count += 1;
+    } else {
+      total.push({ date, count: 1 });
+    }
+    return total;
+  }, [] as Array<{ date: string; count: number }>);
+  return bookingsPerMonth;
+};
+```
+
+### Admin User - ChartsContainer
+
+```tsx
+import { fetchChartsData } from '@/utils/actions';
+import Chart from './Chart';
+
+async function ChartsContainer() {
+  const bookings = await fetchChartsData();
+  if (bookings.length < 1) return null;
+
+  return <Chart data={bookings} />;
+}
+export default ChartsContainer;
+```
+
+### Recharts
+
+[Recharts](https://recharts.org/en-US/)
+
+```sh
+npm install recharts
+```
+
+### Admin User - Chart Component
+
+```tsx
+'use client';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+type ChartPropsType = {
+  data: {
+    date: string;
+    count: number;
+  }[];
+};
+
+function Chart({ data }: ChartPropsType) {
+  return (
+    <section className='mt-24'>
+      <h1 className='text-4xl font-semibold text-center'>Monthly Bookings</h1>
+      <ResponsiveContainer width='100%' height={300}>
+        <BarChart data={data} margin={{ top: 50 }}>
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='date' />
+          <YAxis allowDecimals={false} />
+          <Tooltip />
+          <Bar dataKey='count' fill='#F97215' barSize={75} />
+        </BarChart>
+      </ResponsiveContainer>
+    </section>
+  );
+}
+export default Chart;
+```
