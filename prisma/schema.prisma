@@ -11,6 +11,12 @@
 // git add . 
 // git commit -m "first commit"
 
+// git remote add origin https://github.com/alexcol123/airbnb.git
+// git branch -M main
+// git push -u origin main
+
+// https://airbnb-black-theta.vercel.app/
+
 generator client {
   provider = "prisma-client-js"
 }
