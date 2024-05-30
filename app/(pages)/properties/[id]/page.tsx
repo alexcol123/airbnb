@@ -1,7 +1,7 @@
 import FavoriteToggleButton from "@/components/(myComponents)/card/FavoriteToggleButton"
 import PropertyRating from "@/components/(myComponents)/card/PropertyRating"
 import Amenities from "@/components/(myComponents)/properties/Amenities"
-import BookingCalendar from "@/components/(myComponents)/properties/BookingCalendar"
+
 import BreadCrumbs from "@/components/(myComponents)/properties/BreadCrumbs"
 import Description from "@/components/(myComponents)/properties/Description"
 import ImageContainer from "@/components/(myComponents)/properties/ImageContainer"
@@ -27,6 +27,14 @@ const DynamicMap = dynamic(
   }
 );
 
+const DynamicBookingWrapper = dynamic(() => import('@/components/(myComponents)/booking/BookingWrapper'), {
+  ssr: false,
+  loading: () => <Skeleton className='h-[400px] w-full' />
+}
+
+)
+
+
 const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
 
 
@@ -48,6 +56,8 @@ const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
 
   const isNotOwner = property.profile.clerkId !== userId
   const reviewDoesNotExist = userId && isNotOwner && !(await findExistingReview(userId, property.id))
+
+
 
 
   return (
@@ -87,8 +97,8 @@ const PropertyDetailsPage = async ({ params }: { params: { id: string } }) => {
 
         <div className='lg:col-span-4 flex flex-col items-center'>
           {/* Calendar */}
+          <DynamicBookingWrapper propertyId={property.id} price={property.price} bookings={property.bookings} />
 
-          <BookingCalendar />
 
         </div>
 
