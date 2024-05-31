@@ -58,6 +58,7 @@ export const generateDisabledDates = (
     const endDate = new Date(range.to);
 
     while (currentDate <= endDate) {
+   
       const dateString = currentDate.toISOString().split('T')[0];
       disabledDates[dateString] = true;
       currentDate.setDate(currentDate.getDate() + 1);

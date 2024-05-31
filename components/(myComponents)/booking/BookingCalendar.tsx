@@ -12,22 +12,55 @@ import {
   defaultSelected,
   generateBlockedPeriods,
 } from '@/utils/calendar';
+import { describe } from 'node:test';
+import { Description } from '@radix-ui/react-toast';
 
 const BookingCalendar = () => {
+  const {toast} = useToast();
 
-  const currentData = new Date();
+  const currentDate = new Date();
+
+  console.log('currentDate', currentDate)
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
+
+  const bookings = useProperty((state) => state.bookings);
+
+  const blockePeriods = generateBlockedPeriods({
+    bookings,
+    today: currentDate,
+  });
+
+  const unavailableDates = generateDisabledDates(blockePeriods);
+
+  console.log('ubavailableDates', unavailableDates)
+
 
 
   useEffect(() => {
-    useProperty.setState({ range })
-
-  }, [range])
-
+    const selectedRange = generateDateRange(range);
+    
+    const isDisabledDateIncluded = selectedRange.some((date) => {
+      if (unavailableDates[date]) {
+        setRange(defaultSelected);
+        toast({
+          description: 'Some dates are booked. Please select again.',
+          variant: "destructive",
+        });
+        return true;
+      }
+      return false;
+    });
+    useProperty.setState({ range });
+  }, [range]);
 
   return (
-    <Calendar mode='range' defaultMonth={currentData} selected={range}
-      onSelect={setRange} className='mb-4' />
+    <Calendar mode='range'
+      defaultMonth={currentDate}
+      selected={range}
+      onSelect={setRange}
+      className='mb-4'
+      disabled={blockePeriods}
+    />
   )
 }
 export default BookingCalendar
