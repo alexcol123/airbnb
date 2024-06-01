@@ -7,20 +7,25 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
 
 
 
+  const amenitiesWithIcons = defaultValue?.map(({ name, selected }) => ({
+    name,
+    selected,
+    icon: amenities.find((amenity) => amenity.name === name)!.icon,
+  }));
   const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(
-    defaultValue || amenities
-  )
-
+    amenitiesWithIcons || amenities
+  );
   const handleChange = (amenity: Amenity) => {
     setSelectedAmenities((prev) => {
       return prev.map((a) => {
         if (a.name === amenity.name) {
-          return { ...a, selected: !a.selected }
+          return { ...a, selected: !a.selected };
         }
-        return a
-      })
-    })
-  }
+        return a;
+      });
+    });
+  };
+
 
   return (
     <section>
